@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+turjuman/__init__.py
+turjuman/metrics.py
+turjuman/turjuman.py
+turjuman.egg-info/PKG-INFO
+turjuman.egg-info/SOURCES.txt
+turjuman.egg-info/dependency_links.txt
+turjuman.egg-info/entry_points.txt
+turjuman.egg-info/requires.txt
+turjuman.egg-info/top_level.txt
+turjuman_cli/__init__.py
+turjuman_cli/interactive.py
+turjuman_cli/score.py
+turjuman_cli/translate.py

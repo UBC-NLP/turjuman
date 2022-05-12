@@ -1,3 +1,14 @@
+Metadata-Version: 2.1
+Name: turjuman
+Version: 1.0.0
+Summary: Turjuman: An Open Source Toolkit for Diverse Arabic Machine Translation
+Home-page: https://github.com/UBC-NLP/turjuman
+Author: AbdelRahim Elmadany
+Author-email: a.elmadany@ubc.ca
+License: GNU
+Platform: UNKNOWN
+License-File: LICENSE
+
 # TURJUMAN
 <img src="./images/turjuman.png" alt="AraT5" width="55%" height="45%" align="right"/>
 
@@ -16,9 +27,6 @@ TURJUMAN, a neural toolkit for translating from 20 languages into Modern Standar
     cd turjuman
     pip install .
 ```
-## Getting Started
-The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains instructions for getting started, translation using diffrent methods, intergrate Turjuman with your code, and provides more examples.
-
 ## Citation
 If you use TURJUMAN toolkit for your scientific publication, or if you find the resources in this repository useful, please cite our paper as follows (to be updated):
 ```
@@ -30,3 +38,4 @@ If you use TURJUMAN toolkit for your scientific publication, or if you find the 
 
 ## 7. Acknowledgments
 We gratefully acknowledge support from the Natural Sciences and Engineering Research Council  of Canada, the  Social  Sciences and  Humanities  Research  Council  of  Canada, Canadian  Foundation  for  Innovation,  [ComputeCanada](www.computecanada.ca) and [UBC ARC-Sockeye](https://doi.org/10.14288/SOCKEYE). We  also  thank  the  [Google TensorFlow Research Cloud (TFRC)](https://www.tensorflow.org/tfrc) program for providing us with free TPU access.
+
