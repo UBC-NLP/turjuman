@@ -28,7 +28,7 @@ def get_parser():
     parser.add_argument('-t', '--text', type=str, help='The input source text')
     parser.add_argument('-f', '--input_file', type=str, help='The source text input file path')
     parser.add_argument('-s', '--seq_length', type=int, help='seq_length value, default vlaue is 512')
-    parser.add_argument('-o', '--max_outputs', default=1, type=int, help='the maxmuim output value, default vlaue is 1')
+    parser.add_argument('-o', '--max_outputs', default=1, type=int, help='the maxmuim of the output tanslations, default vlaue is 1')
     parser.add_argument('-b', '--num_beams', default=5, type=int, help='Number of beams, default vlaue is 1')
     parser.add_argument('-n', '--no_repeat_ngram_size', default=2, type=int, help='Number of n-gram that doesn\'t appears twice, default vlaue is 2')
     parser.add_argument('-k', '--top_k', default=50, type=int, help='top_k value, default vlaue is 50')
