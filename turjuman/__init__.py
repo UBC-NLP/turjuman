@@ -1,5 +1,5 @@
 
-from torjuman import *
+from turjuman import *
 __author__ = "AbdelRahim Elmadany"
 __copyright__ = "Copyright 2021, University of British Columbia (UBC), NLP Lab"
 __license__ = "GPL"

@@ -5,11 +5,11 @@ with open("README.md", "r") as readme_file:
 
 from setuptools import setup
 
-setup(name='torjuman',
+setup(name='turjuman',
       version='1.0.0',
-      description='An Open Source Toolkit for Diverse Arabic Machine Translation',
+      description='Turjuman: An Open Source Toolkit for Diverse Arabic Machine Translation',
       long_description=readme,
-      url='https://github.com/UBC-NLP/torjuman',
+      url='https://github.com/UBC-NLP/turjuman',
       author='AbdelRahim Elmadany',
       author_email='a.elmadany@ubc.ca',
       license='GNU',
@@ -17,15 +17,19 @@ setup(name='torjuman',
       install_requires=[
           'regex',
           'torch',
+          'protobuf',
           'sentencepiece',
           'transformers',
           'psutil',
           'pandas',
-          'tqdm'
+          'tqdm',
+          'sacrebleu'
         ],
       entry_points={
             "console_scripts": [
-                "torjuman = torjuman_cli.torjuman:cli_main",
+                "turjuman_translate = turjuman_cli.translate:translate_cli",
+                "turjuman_score = turjuman_cli.score:score_cli",
+                "turjuman_interactive = turjuman_cli.interactive:interactive_cli",
             ],
         },
       
