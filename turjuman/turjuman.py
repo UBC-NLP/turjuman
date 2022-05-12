@@ -3,15 +3,16 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from pathlib import Path
 import pandas as pd
 class turjuman():
-    def __init__(self, logger, model_path=None):
+    def __init__(self, logger, cache_dir, model_path=None):
         self.logger = logger
+        self.cache_dir=cache_dir
         self.model, self.tokenizer = self.load_model(model_path)
     
     def load_model(self, model_path):
         model_path = model_path if model_path else "UBC-NLP/turjuman"
         self.logger.info("Loading model from {}".format(model_path))
-        tokenizer = AutoTokenizer.from_pretrained(model_path)  
-        model = AutoModelForSeq2SeqLM.from_pretrained(model_path)
+        tokenizer = AutoTokenizer.from_pretrained(model_path, cache_dir=self.cache_dir)  
+        model = AutoModelForSeq2SeqLM.from_pretrained(model_path, cache_dir=self.cache_dir)
         return model, tokenizer
     def validate(self, search_method, max_outputs, num_beams):
         validattion_results=None

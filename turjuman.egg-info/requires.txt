@@ -1,9 +1,0 @@
-regex
-torch
-protobuf
-sentencepiece
-transformers
-psutil
-pandas
-tqdm
-sacrebleu
