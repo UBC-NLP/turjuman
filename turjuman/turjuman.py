@@ -125,10 +125,10 @@ class turjuman():
             temp=[]
             for t in range (translate_start_id, translate_start_end):
                 temp.append(generated_text[t])
-            if len(temp) >1:
+            if len(temp)>1:
                 targets.append(temp)
             else:
-                targets.append(temp[0])
+                targets.append(temp)
         outputs={'source':sources, 'target':targets}
         return outputs
     def translate_from_file(self, input_file, search_method, seq_length=512, max_outputs=1, num_beams=5, no_repeat_ngram_size=2, top_p=0.95, top_k=50):
@@ -150,11 +150,12 @@ class turjuman():
         outputs = self.translate(sources, search_method, seq_length, max_outputs, num_beams, no_repeat_ngram_size, top_p, top_k)
         # print (outputs)
         print ("source: {}".format(outputs['source'][0]))
-        for idx, target in enumerate(outputs['target'][0]):
-            if max_outputs>1:
-                print ("target#{}: {}".format(idx+1, target))
-            else:
-                print ("target: {}".format(target))
+        targets = outputs['target'][0]
+        if type(targets) == list:
+            for idx, target in enumerate(targets):
+                 print ("target#{}: {}".format(idx+1, target))
+        else:
+            print ("target: {}".format(targets))
 
 
                 
