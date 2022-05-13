@@ -1,0 +1,8 @@
+Translate from input file .\examples\samples.txt
+Loading model from UBC-NLP/turjuman
+Using beam search
+The translation are saved on examples\samples_Turjuman_translate.json
+Translate from input file .\examples\samples.txt
+Loading model from UBC-NLP/turjuman
+Using beam search
+The translation are saved on examples\samples_Turjuman_translate.json

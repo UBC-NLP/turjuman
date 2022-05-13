@@ -119,15 +119,15 @@ class turjuman():
 
         generated_text = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
         targets=[]
-        for i in range(0, len(generated_text), max_outputs):
-            translate_start_id= i
-            translate_start_end= i+max_outputs
-            temp=[]
-            for t in range (translate_start_id, translate_start_end):
-                temp.append(generated_text[t])
-            if len(temp)>1:
-                targets.append(temp)
-            else:
+        if max_outputs==1:
+            targets = generated_text
+        else:
+            for i in range(0, len(generated_text), max_outputs):
+                translate_start_id= i
+                translate_start_end= i+max_outputs
+                temp=[]
+                for t in range (translate_start_id, translate_start_end):
+                    temp.append(generated_text[t])
                 targets.append(temp)
         outputs={'source':sources, 'target':targets}
         return outputs
@@ -139,6 +139,7 @@ class turjuman():
             self.logger.error("The input file {} is empty".format(input_file))
         output_file = str(Path(input_file).with_suffix(''))+"_Turjuman_translate.json"
         outputs = self.translate(sources, search_method, seq_length, max_outputs, num_beams, no_repeat_ngram_size, top_p, top_k)
+        print (outputs)
         df = pd.DataFrame.from_dict(outputs)
         df.to_json(output_file, orient='records', lines=True)
         self.logger.info("The translation are saved on {}".format(output_file))
