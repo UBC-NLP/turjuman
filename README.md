@@ -1,4 +1,25 @@
 # TURJUMAN
+<p align="center">
+<a href="https://github.com/UBC-NLP/turjuman/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/UBC-NLP/turjuman"></a>
+    <!-- <a href="https://circleci.com/gh/huggingface/transformers">
+        <img alt="Build" src="https://img.shields.io/circleci/build/github/huggingface/transformers/main">
+    </a>
+    <a href="https://github.com/huggingface/transformers/blob/main/LICENSE">
+        <img alt="GitHub" src="https://img.shields.io/github/license/huggingface/transformers.svg?color=blue">
+    </a>
+    <a href="https://huggingface.co/docs/transformers/index">
+        <img alt="Documentation" src="https://img.shields.io/website/http/huggingface.co/docs/transformers/index.svg?down_color=red&down_message=offline&up_message=online">
+    </a>
+    <a href="https://github.com/huggingface/transformers/releases">
+        <img alt="GitHub release" src="https://img.shields.io/github/release/huggingface/transformers.svg">
+    </a>
+    <a href="https://github.com/huggingface/transformers/blob/main/CODE_OF_CONDUCT.md">
+        <img alt="Contributor Covenant" src="https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg">
+    </a>
+    <a href="https://zenodo.org/badge/latestdoi/155220641"><img src="https://zenodo.org/badge/155220641.svg" alt="DOI"></a> -->
+</p>
+
+
 <img src="./images/turjuman.png" alt="AraT5" width="55%" height="45%" align="right"/>
 
 TURJUMAN, a neural toolkit for translating from 20 languages into Modern Standard Arabic (MSA). TURJUMAN exploits the recently-introduced text-to-text Transformer [AraT5 model](https://github.com/UBC-NLP/araT5) (Nagoudi et al., 2022), endowing it with a powerful ability to decode into Arabic. The toolkit offers the possibility of employing a number of diverse decoding methods, making it suited for acquiring paraphrases for the MSA translations as an added value. To train TURJUMAN, we sample from publicly available parallel data employing a simple semantic similarity method to ensure data quality.
