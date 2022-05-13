@@ -5,7 +5,7 @@
 <a href="https://github.com/UBC-NLP/turjuman/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/UBC-NLP/turjuman"></a>
 <a href="https://github.com/UBC-NLP/turjuman/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/UBC-NLP/turjuman"></a>
 
-
+</p>
 
 <img src="./images/turjuman.png" alt="AraT5" width="55%" height="45%" align="right"/>
 
