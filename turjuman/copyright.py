@@ -1,7 +1,0 @@
-__author__ = "Moataz Nagoudi, AbdelRahim Elmadany, and Muhammad Abdul-Mageed"
-__copyright__ = "Copyright 2022, University of British Columbia (UBC), Deep learning and Natural Langauge Processing Lab"
-__license__ = "GPL"
-__version__ = "1.0.0"
-__email__ = "a.elmadany@ubc.ca"
-__status__ = "Production"
-__description__="TURJUMAN, a neural toolkit for translating from 20 languages into Modern Standard Arabic (MSA). TURJUMAN exploits the recently-introduced text-to-text Transformer AraT5 model (Nagoudi et al., 2022), endowing it with a powerful ability to decode into Arabic. The toolkit offers the possibility of employing a number of diverse decoding methods, making it suited for acquiring paraphrases for the MSA translations as an added value. To train TURJUMAN, we sample from publicly available parallel data employing a simple semantic similarity method to ensure data quality."

@@ -1,4 +1,4 @@
-from turjuman.copyright import *
+from copyright import *
 from setuptools import setup, find_packages
 
 with open("README.md", "r") as readme_file:
@@ -7,13 +7,13 @@ with open("README.md", "r") as readme_file:
 from setuptools import setup
 
 setup(name='turjuman',
-      version=__version__,
-      description=__description__,
+      version=version,
+      description=description,
       long_description=readme,
       url='https://github.com/UBC-NLP/turjuman',
-      author=__author__,
-      author_email=__email__,
-      license=__license__,
+      author=author,
+      author_email=email,
+      license=license,
       packages=find_packages(),
       install_requires=[
           'regex',
