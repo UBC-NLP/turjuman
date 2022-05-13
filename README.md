@@ -41,6 +41,19 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
 
 ## Colab Examples
 ### (1) Command Line Interface
+<table border=1>
+<tr>
+<td>turjuman_translate</td>
+<td>
+- Usage and Arguments 
+    - Translate using beam search (default option)
+    - Translate using greedy search
+    - Translate using sampling search
+    - Read and translate text from file
+</td>
+</td> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb)</td>
+</tr>
+</table>
 - **turjuman_translate**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb)
     - Usage and Arguments 
     - Translate using beam search (default option)
