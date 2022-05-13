@@ -21,6 +21,8 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
 
 ## Colab Examples
 - **turjuman_translate** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb)
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+
 ## License
 turjuman(-py) is MIT-licensed. The license applies to the pre-trained models as well.
 ## Citation
