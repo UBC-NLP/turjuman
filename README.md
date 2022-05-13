@@ -48,8 +48,8 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
 <td>
     <ul>
         <li> Usage and Arguments </li>
-        <li> Translate using beam search (default option)</li>
         <li> Translate using greedy search</li>
+        <li> Translate using beam search (default)</li>
         <li> Translate using sampling search</li>
         <li> Read and translate text from file</li>
     </ul>
@@ -58,6 +58,28 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
 <a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
 
  </td>
+</tr>
+<tr>
+<td>turjuman_score</td>
+<td>
+    <ul>
+        <li> Usage and Arguments </li>
+        <li> Input files format</li>
+        <li> Example</li>
+    </ul>
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>turjuman_interactive</td>
+<td>
+    <ul>
+        <!-- <li> Usage and Arguments </li>
+        <li> Input files format</li>
+        <li> Example</li> -->
+    </ul>
+</td>
+<td> </td>
 </tr>
 </table>
 
