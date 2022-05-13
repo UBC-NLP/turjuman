@@ -54,7 +54,8 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
     </ul>
 </td>
 </td>
- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb) 
+<a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
+
  </td>
 </tr>
 </table>
