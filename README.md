@@ -41,7 +41,8 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
 
 ## Colab Examples
 ### (1) Command Line Interface
-<table border=1>
+<table border=1 style='border:1px red;'>
+<tr><td>Command</td><td> Content</td><td>Colab link</td></tr>
 <tr>
 <td>turjuman_translate</td>
 <td>
@@ -53,7 +54,7 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
         <li> Read and translate text from file</li>
     </ul>
 </td>
-</td>
+<td>
 <a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
 
  </td>
