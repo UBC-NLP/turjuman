@@ -1,4 +1,4 @@
-from copyright import *
+from turjuman.copyright import *
 from setuptools import setup, find_packages
 
 with open("README.md", "r") as readme_file:

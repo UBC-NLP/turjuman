@@ -1,6 +1,6 @@
 
 from turjuman import *
-from ..copyright import *
+from turjuman.copyright import *
 __author__ = author
 __copyright__ = copyright
 __license__ = license
