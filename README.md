@@ -42,7 +42,7 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
 ## Colab Examples
 ### (1) Command Line Interface
 <table style='border:1px red;' width='100%'>
-<tr><td>**Command**</td><td> **Content</td><td>**Colab link**</td></tr>
+<tr><td><b>Command</b></td><td> <b>Content</b></td><td><b>Colab link</b></td></tr>
 <tr>
 <td>turjuman_translate</td>
 <td>
