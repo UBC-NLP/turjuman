@@ -5,6 +5,10 @@
 <p>
 
 <p align="center">
+<a href="https://github.com/UBC-NLP/turjuman/releases">
+        <img alt="GitHub release" src="https://img.shields.io/github/release/UBC-NLP/turjuman.svg">
+    </a>
+
 <a href="https://turjuman.dlnlp.ai">
         <img alt="Documentation" src="https://img.shields.io/website.svg?down_color=red&down_message=offline&up_message=online&url=https://turjuman.dlnlp.ai">
     </a>
