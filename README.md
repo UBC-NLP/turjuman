@@ -40,14 +40,13 @@ TURJUMAN, a neural toolkit for translating from 20 languages into Modern Standar
 The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains instructions for getting started, translation using diffrent methods, intergrate Turjuman with your code, and provides more examples.
 
 ## Colab Examples
-| Command 	| Description 	| Example Link 	|
-|---------	|-------------	|--------------	|
-| turjuman_translate |   - Usage and Arguments          	| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb) |
-|         	| - Translate usong beam search            	|              	|
-|         	| - Translate usong greedy search            	|              	|
-|         	| - Translate usong sampling search            	|              	|
-|    turjuman_interactive     	|             	|              	|
-|    turjuman_score     	|             	|              	|
+### Command Line Interface
+- **turjuman_translate**: this notebook contains the follows: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb)
+    - Usage and Arguments 
+    - Translate using beam search (default option)
+    - Translate using greedy search
+    - Translate using sampling search
+    - Read and translate text from file
 
 ## License
 turjuman(-py) is MIT-licensed. The license applies to the pre-trained models as well.
