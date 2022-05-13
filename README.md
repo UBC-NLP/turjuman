@@ -1,7 +1,6 @@
-# TURJUMAN
 <p align="center">
     <br>
-    <img src="./images/turjuman_logo.png" width="400"/>
+    <img src="./images/turjuman_logo.png"/>
     <br>
 <p>
 
