@@ -1,7 +1,7 @@
 # TURJUMAN
 <p align="center">
 <a href="https://huggingface.co/docs/transformers/index">
-        <img alt="Documentation" src="https://img.shields.io/website/http/turjuman.dlnlp.ai/index.svg?down_color=red&down_message=offline&up_message=online">
+        <img alt="Documentation" src="https://img.shields.io/website/http/dlnlp.ai/index.svg?down_color=red&down_message=offline&up_message=online">
     </a>
 <a href="https://github.com/UBC-NLP/turjuman/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/UBC-NLP/turjuman?logoColor=blue"></a>
 <a href="https://github.com/UBC-NLP/turjuman/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/UBC-NLP/turjuman"></a>
