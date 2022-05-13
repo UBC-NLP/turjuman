@@ -1,13 +1,19 @@
 
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from pathlib import Path
+import dask.dataframe as dd
 import pandas as pd
+from hurry.filesize import size
+import psutil
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 
 class turjuman():
     def __init__(self, logger, cache_dir, model_path=None):
         self.logger = logger
         self.cache_dir=cache_dir
         self.model, self.tokenizer = self.load_model(model_path)
+        self.num_cpus=num_cpus=len(psutil.Process().cpu_affinity())
+
     
     def load_model(self, model_path):
         model_path = model_path if model_path else "UBC-NLP/turjuman"
@@ -86,7 +92,13 @@ class turjuman():
                 targets.append(temp)
             outputs={'source':sources, str(max_outputs)+'_targets':targets}
         return outputs
-        
+    
+    def translate_batch(self, sources, search_method, seq_length, max_outputs, num_beams, no_repeat_ngram_size, top_p, top_k):
+        return self.translate(sources, search_method, seq_length, max_outputs, num_beams, no_repeat_ngram_size, top_p, top_k)
+    def multiprocessing(func, args, workers):
+        with ProcessPoolExecutor(workers) as ex:
+            res = ex.map(func, args)
+        return list(res)
     def translate_from_file(self, input_file, search_method, seq_length=512, max_outputs=1, num_beams=5, no_repeat_ngram_size=2, top_p=0.95, top_k=50):
         if self.validate(search_method, max_outputs, num_beams) is None:
             return None
@@ -94,6 +106,25 @@ class turjuman():
         if len(sources)<1:
             self.logger.error("The input file {} is empty".format(input_file))
         output_file = str(Path(input_file).with_suffix(''))+"_Turjuman_translate.json"
+        #-- create batches start--#
+        # pd_df = pd.DataFrame.from_dict({'source':sources})
+        # ddf = dd.from_pandas(pd_df, npartitions=self.num_cpus)
+        # num_chuncks=len(ddf.map_partitions(len).compute())
+        # self.logger.error("Data are splitted into {} batches".format(num_chuncks))
+        # chuncks_list=[]
+        # for i in  range (0, num_chuncks):
+        #     chunck_df = ddf.partitions[i].compute()
+        #     chuncks_list.append(chunck_df.source.to_list())
+        #-- create batches end--#
+        #translate batche
+        # self.multiprocessing(self.translate_batch, chuncks_list, self.num_cpus)
+
+
+
+
+
+
+
         outputs = self.translate(sources, search_method, seq_length, max_outputs, num_beams, no_repeat_ngram_size, top_p, top_k)
         df = pd.DataFrame.from_dict(outputs)
         df.to_json(output_file, orient='records', lines=True)
