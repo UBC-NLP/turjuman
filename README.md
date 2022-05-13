@@ -1,5 +1,11 @@
 # TURJUMAN
 <p align="center">
+    <br>
+    <img src="./images/turjuman_logo.png" width="400"/>
+    <br>
+<p>
+
+<p align="center">
 <a href="https://www.dlnlp.ai">
         <img alt="Documentation" src="https://img.shields.io/website.svg?down_color=red&down_message=offline&up_message=online&url=http%3A%2F%2Fdlnlp.ai%2Findex">
     </a>
