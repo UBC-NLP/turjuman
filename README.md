@@ -42,10 +42,13 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
 ## Colab Examples
 | Command 	| Description 	| Example Link 	|
 |---------	|-------------	|--------------	|
-| turjuman_translate |             	| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb) |
+| turjuman_translate |   - Usage and Arguments          	| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb) |
+|         	| - Translate usong beam search            	|              	|
+|         	| - Translate usong greedy search            	|              	|
+|         	| - Translate usong sampling search            	|              	|
 |    turjuman_interactive     	|             	|              	|
 |    turjuman_score     	|             	|              	|
--
+
 ## License
 turjuman(-py) is MIT-licensed. The license applies to the pre-trained models as well.
 ## Citation
