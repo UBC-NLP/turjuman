@@ -19,9 +19,8 @@ TURJUMAN, a neural toolkit for translating from 20 languages into Modern Standar
 ## Getting Started
 The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains instructions for getting started, translation using diffrent methods, intergrate Turjuman with your code, and provides more examples.
 
-## Colab
-The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains instructions for getting started, translation using diffrent methods, intergrate Turjuman with your code, and provides more examples.
-
+## Colab Examples
+- **turjuman_translate** [![Open In Colab][COLAB]](https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb)
 ## License
 turjuman(-py) is MIT-licensed. The license applies to the pre-trained models as well.
 ## Citation
