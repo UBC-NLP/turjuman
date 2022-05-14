@@ -1,4 +1,5 @@
-
+from asyncio.log import logger
+from datetime import datetime
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from pathlib import Path
 import dask.dataframe as dd
@@ -6,6 +7,7 @@ import pandas as pd
 from hurry.filesize import size
 import psutil
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
+from tqdm import tqdm
 
 class turjuman():
     def __init__(self, logger, cache_dir, model_path=None):
@@ -93,9 +95,20 @@ class turjuman():
             outputs={'source':sources, str(max_outputs)+'_targets':targets}
         return outputs
     
-    def translate_batch(self, sources, search_method, seq_length, max_outputs, num_beams, no_repeat_ngram_size, top_p, top_k):
-        return self.translate(sources, search_method, seq_length, max_outputs, num_beams, no_repeat_ngram_size, top_p, top_k)
-    def multiprocessing(func, args, workers):
+    def translate_batch(self, args):
+        batch_id=args['batch_id']
+        sources=args['source']
+        search_method=args['search_method']
+        seq_length=args['seq_length']
+        max_outputs=args['max_outputs']
+        num_beams=args['num_beams']
+        no_repeat_ngram_size=args['no_repeat_ngram_size']
+        top_p=args['top_p']
+        top_k=args['top_k']
+        output=self.translate(sources, search_method, seq_length, max_outputs, num_beams, no_repeat_ngram_size, top_p, top_k)
+        self.logger.info("Collecting translation from batch #{}".format(batch_id))
+        return output
+    def multiprocessing(self, func, args, workers):
         with ProcessPoolExecutor(workers) as ex:
             res = ex.map(func, args)
         return list(res)
@@ -107,26 +120,45 @@ class turjuman():
             self.logger.error("The input file {} is empty".format(input_file))
         output_file = str(Path(input_file).with_suffix(''))+"_Turjuman_translate.json"
         #-- create batches start--#
-        # pd_df = pd.DataFrame.from_dict({'source':sources})
-        # ddf = dd.from_pandas(pd_df, npartitions=self.num_cpus)
-        # num_chuncks=len(ddf.map_partitions(len).compute())
-        # self.logger.error("Data are splitted into {} batches".format(num_chuncks))
-        # chuncks_list=[]
-        # for i in  range (0, num_chuncks):
-        #     chunck_df = ddf.partitions[i].compute()
-        #     chuncks_list.append(chunck_df.source.to_list())
+        
+        pd_df = pd.DataFrame.from_dict({'source':sources})
+        ddf = dd.from_pandas(pd_df, npartitions=self.num_cpus)
+        num_chuncks=len(ddf.map_partitions(len).compute())
+        self.logger.error("Data are splitted into {} batches".format(num_chuncks))
+        batches=[]
+        for i in  range (0, num_chuncks):
+            chunck_df = ddf.partitions[i].compute()
+            args={
+                    'batch_id':(i+1),
+                    'source':chunck_df.source.to_list(),
+                    'search_method':search_method, 
+                    'seq_length':seq_length, 
+                    'max_outputs':max_outputs,
+                    'num_beams':num_beams,
+                    'no_repeat_ngram_size':no_repeat_ngram_size,
+                    'top_p':top_p, 
+                    'top_k':top_k
+                }
+            batches.append(args)
+            # break
         #-- create batches end--#
-        #translate batche
-        # self.multiprocessing(self.translate_batch, chuncks_list, self.num_cpus)
+        dataframes=[]
+        start_generation = datetime.now()
+        batches_outputs = self.multiprocessing(self.translate_batch, batches, self.num_cpus)
+        pbar = tqdm(total=len(batches_outputs), desc="Merge batches outpus")
+        for output in batches_outputs:
+            dataframes.append(pd.DataFrame.from_dict(output))
+            pbar.update(1)
+        pbar.close()
+        end_generation = datetime.now()
+        self.logger.info("{} batches translation duration time is {}".format(len(batches), end_generation-start_generation))
+        
+        # start_generation = datetime.now()
+        # batch_tranalation_list = self.multiprocessing(self.translate_batch, batches, self.num_cpus)
+        # end_generation = datetime.now()
+        # print (" duration", end_generation-start_generation)
 
-
-
-
-
-
-
-        outputs = self.translate(sources, search_method, seq_length, max_outputs, num_beams, no_repeat_ngram_size, top_p, top_k)
-        df = pd.DataFrame.from_dict(outputs)
+        df = pd.concat(dataframes, axis=0, ignore_index=True)
         df.to_json(output_file, orient='records', lines=True)
         self.logger.info("The translation are saved on {}".format(output_file))
 

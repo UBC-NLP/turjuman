@@ -28,7 +28,8 @@ setup(name='turjuman',
           'dask',
           'dask[dataframe]',
           'psutil',
-          'hurry.filesize'
+          'hurry.filesize',
+          'tqdm'
         ],
       entry_points={
             "console_scripts": [
