@@ -1,0 +1,14 @@
+regex
+torch
+protobuf
+sentencepiece
+transformers
+psutil
+pandas
+tqdm
+sacrebleu
+dask
+dask[dataframe]
+psutil
+hurry.filesize
+tqdm
