@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: turjuman
-Version: 0.2.dev0
+Version: 0.3.dev0
 Summary: TURJUMAN, a neural toolkit for translating from 20 languages into Modern Standard Arabic (MSA).
 Home-page: https://github.com/UBC-NLP/turjuman
 Author: Moataz Nagoudi, AbdelRahim Elmadany, and Muhammad Abdul-Mageed

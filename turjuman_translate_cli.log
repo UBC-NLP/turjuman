@@ -26,3 +26,8 @@ Turjuman Translate Command Line Interface
 Translate from input file .\examples\samples.txt
 Loading model from UBC-NLP/turjuman
 The file contains 100 sentences/lines, it will process using 4 batches
+Turjuman Translate Command Line Interface
+Translate from input file .\examples\samples.txt
+Loading model from UBC-NLP/turjuman
+Batch size 50 sentences/lines
+The file contains 100 sentences/lines, it will process using 2 batches

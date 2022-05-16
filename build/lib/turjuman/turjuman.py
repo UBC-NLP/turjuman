@@ -108,7 +108,8 @@ class turjuman():
         top_k=args['top_k']
         output=self.translate(sources, search_method, seq_length, max_outputs, num_beams, no_repeat_ngram_size, top_p, top_k)
         self.logger.info("Collecting translation from batch #{}".format(batch_id))
-        return {'batch':batch_id, 'output':output}
+        # return {'batch':batch_id, 'output':output}
+        return output
     def multiprocessing(self, func, args, workers):
         with ProcessPoolExecutor(workers) as ex:
             res = ex.map(func, args)
@@ -124,7 +125,8 @@ class turjuman():
         
         pd_df = pd.DataFrame.from_dict({'source':sources})
         num_sentences = len(pd_df.index)
-        batch_size=25
+        batch_size=50
+        self.logger.error("Batch size {} sentences/lines".format(batch_size))
         num_batches=math.ceil(num_sentences/batch_size)
         ddf = dd.from_pandas(pd_df, npartitions=num_batches)
         num_chuncks=len(ddf.map_partitions(len).compute())
@@ -149,7 +151,7 @@ class turjuman():
         #-- create batches end--#
         dataframes=[]
         start_generation = datetime.now()
-        batches_outputs = self.multiprocessing(self.translate_batch, batches, math.floor(self.num_cpus/2))
+        batches_outputs = self.multiprocessing(self.translate_batch, batches, 1)
         pbar = tqdm(total=len(batches_outputs), desc="Merge batches outpus")
         for output in batches_outputs:
             dataframes.append(pd.DataFrame.from_dict(output))
