@@ -126,9 +126,9 @@ class turjuman():
         num_sentences = len(pd_df.index)
         batch_size=25
         num_batches=math.ceil(num_sentences/batch_size)
-        ddf = dd.from_pandas(pd_df, npartitions=self.num_cpus)
-        # num_chuncks=len(ddf.map_partitions(len).compute())
-        self.logger.error("The file contains {} sentences/lines, it will process using {} batches".format(num_sentences, num_batches))
+        ddf = dd.from_pandas(pd_df, npartitions=num_batches)
+        num_chuncks=len(ddf.map_partitions(len).compute())
+        self.logger.error("The file contains {} sentences/lines, it will process using {} batches".format(num_sentences, num_chuncks))
         batches=[]
         for i in  range (0, num_batches):
 
