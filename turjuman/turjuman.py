@@ -149,7 +149,7 @@ class turjuman():
         #-- create batches end--#
         dataframes=[]
         start_generation = datetime.now()
-        batches_outputs = self.multiprocessing(self.translate_batch, batches, math.floor(self.num_cpus/2))
+        batches_outputs = self.multiprocessing(self.translate_batch, batches, 1)
         pbar = tqdm(total=len(batches_outputs), desc="Merge batches outpus")
         for output in batches_outputs:
             dataframes.append(pd.DataFrame.from_dict(output))
