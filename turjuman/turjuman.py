@@ -126,6 +126,7 @@ class turjuman():
         pd_df = pd.DataFrame.from_dict({'source':sources})
         num_sentences = len(pd_df.index)
         batch_size=50
+        self.logger.error("Batch size {} sentences/lines".format(batch_size))
         num_batches=math.ceil(num_sentences/batch_size)
         ddf = dd.from_pandas(pd_df, npartitions=num_batches)
         num_chuncks=len(ddf.map_partitions(len).compute())
