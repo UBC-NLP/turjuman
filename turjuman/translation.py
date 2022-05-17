@@ -40,7 +40,7 @@ class translate_from_file():
         return processed_datasets["source"]
     def translate(self, filepath, batch_size, gen_kwargs):
         self.gen_kwargs = gen_kwargs
-        print (gen_kwargs)
+        # print (gen_kwargs)
         sources=self.get_file_data(filepath)
         generated_text=[]
         sources_dataloader = DataLoader(sources, collate_fn=self.data_collator, batch_size=batch_size)

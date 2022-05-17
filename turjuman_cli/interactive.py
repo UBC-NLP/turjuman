@@ -43,7 +43,7 @@ def interactive_cli():
         # print ("source", source)
         source = input("Type your source text or (q) to STOP: ")
         if len(regex.sub('\s+','',source))<2:
-            logger.info("source should be at least 2 characters")
+            logger.info("Source should be at least 2 characters")
             continue
         torj.translate_from_text (source, search_method="beam")
 
