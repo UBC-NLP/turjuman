@@ -33,11 +33,11 @@ def score_cli():
     args = parser.parse_args()
     #-------------------------
     
-    logger.addHandler(
-        logging.FileHandler(
-            filename="torjuman_score_cli.log",
-        )
-    )
+    # logger.addHandler(
+    #     logging.FileHandler(
+    #         filename="torjuman_score_cli.log",
+    #     )
+    # )
     # Print args
     
     logger.info(args)

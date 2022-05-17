@@ -25,11 +25,12 @@ setup(name='turjuman',
           'pandas',
           'tqdm',
           'sacrebleu',
-          'dask',
-          'dask[dataframe]',
-          'psutil',
-          'hurry.filesize',
-          'tqdm'
+          # 'dask',
+          # 'dask[dataframe]',
+          # 'psutil',
+          # 'hurry.filesize',
+          'accelerate',
+          'datasets'
         ],
       entry_points={
             "console_scripts": [

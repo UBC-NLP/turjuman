@@ -30,11 +30,11 @@ def interactive_cli():
     args = parser.parse_args()
     #-------------------------
     
-    logger.addHandler(
-        logging.FileHandler(
-            filename="torjuman_interactive_cli.log",
-        )
-    )
+    # logger.addHandler(
+    #     logging.FileHandler(
+    #         filename="torjuman_interactive_cli.log",
+    #     )
+    # )
     # Print args
     logger.info(args)
     torj = turjuman(logger)

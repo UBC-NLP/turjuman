@@ -1,2 +1,0 @@
-turjuman
-turjuman_cli
