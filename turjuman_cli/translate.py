@@ -29,7 +29,7 @@ def get_parser():
     parser.add_argument('-m', '--search_method', type=str, default='beam', help="Turjuman translation search method should be one of the follows ['greedy', 'beam', 'sampling'], default value is beam search")
     parser.add_argument('-s', '--seq_length', type=int, default=300, help='The maximum sequence length value, default vlaue is 300')
     parser.add_argument('-o', '--max_outputs', default=1, type=int, help='The maxmuim of the output tanslations, default vlaue is 1')
-    parser.add_argument('-b', '--num_beams', default=5, type=int, help='Number of beams, default vlaue is 1')
+    parser.add_argument('-b', '--num_beams', default=5, type=int, help='Number of beams, default vlaue is 5')
     parser.add_argument('-n', '--no_repeat_ngram_size', default=2, type=int, help='Number of n-gram that doesn\'t appears twice, default vlaue is 2')
     parser.add_argument('-k', '--top_k', default=50, type=int, help='Sample from top K likely next words instead of all words, default vlaue is 50')
     parser.add_argument('-p', '--top_p', default=0.95, type=float, help='Sample from the smallest set whose cumulative probability mass exceeds p for next words, default vlaue is 0.95')
