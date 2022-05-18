@@ -75,8 +75,7 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
 <td>
     <ul>
         <li> Usage and Arguments </li>
-        <li> Input files format</li>
-        <li> Example</li>
+        <li> Examples</li>
     </ul>
 </td>
 <td> <a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_interactive_cli.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></td>
