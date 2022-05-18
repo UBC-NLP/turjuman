@@ -82,8 +82,23 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
 <td> <a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_interactive_cli.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></td>
 </tr>
 </table>
-
-
+### (2) Integrate Turjuman wit your python code
+<table style='border:1px red;' width='100%'>
+<tr><td><b>Function</b></td><td> <b>Content</b></td><td><b>Colab link</b></td></tr>
+<td>translate <br> translate_from_file</td>
+<td>
+    <ul>
+        <li> Install Turjuman </li>
+        <li> Initial turjuman object </li>
+        <li> Translate using greedy search</li>
+        <li> Translate using beam search (default)</li>
+        <li> Translate using sampling search</li>
+        <li> Read and translate text from file</li>
+    </ul>
+</td>
+<td> <a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/Integrate_turjuman_with_your_code.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></td>
+</tr>
+</table>
 ## License
 turjuman(-py) is Apache-2.0 licensed. The license applies to the pre-trained models as well.
 ## Citation
