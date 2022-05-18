@@ -19,7 +19,7 @@ def get_gen_kwargs(search_method, seq_length, max_outputs, num_beams, no_repeat_
         gen_kwargs = {"max_length": seq_length,"num_return_sequences": max_outputs, 'do_sample':True, 'top_k':top_k, 'top_p':top_p }
     return gen_kwargs
 def extract_output(sources, generated_text, max_outputs, logger):
-    logger.error("extract outputs")
+    logger.info("Extract outputs")
     targets=[]
     if max_outputs==1:
         targets = generated_text
