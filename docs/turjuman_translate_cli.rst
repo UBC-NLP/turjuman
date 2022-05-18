@@ -1,48 +1,6 @@
-.. container:: cell markdown
-
-   #TURJUMAN TURJUMAN, a neural toolkit for translating from 20
-   languages into Modern Standard Arabic (MSA). TURJUMAN exploits the
-   recently-introduced text-to-text Transformer `AraT5
-   model <https://github.com/UBC-NLP/araT5>`__ (Nagoudi et al., 2022),
-   endowing it with a powerful ability to decode into Arabic. The
-   toolkit offers the possibility of employing a number of diverse
-   decoding methods, making it suited for acquiring paraphrases for the
-   MSA translations as an added value. To train TURJUMAN, we sample from
-   publicly available parallel data employing a simple semantic
-   similarity method to ensure data quality.
-
-   --------------
-
-   https://github.com/UBC-NLP/turjuman
-
-.. container:: cell markdown
-
-   ##Install requirments
-
-.. container:: cell code
-
-   .. code:: python
-
-      !pip install git+https://github.com/UBC-NLP/turjuman.git --q
-
-   .. container:: output stream stdout
-
-      ::
-
-         an (setup.py) ... ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
-         datascience 0.10.6 requires folium==0.2.1, but you have folium 0.8.3 which is incompatible.
-
-.. container:: cell code
-
-   .. code:: python
-
-      import pandas as pd
-      pd.set_option('display.max_columns', None)  
-      pd.set_option('display.max_colwidth', None)
-
-.. container:: cell markdown
-
-   ##Turjuman Command Line Interface (CLI) Turjuman cli support two
+turjuman_translate_cli
+=====================
+Turjuman Command Line Interface (CLI) Turjuman cli `turjuman_translate_cli` support two
    types of inputs:
 
    -  **-t** or **--text**: Write you input text directly on the command
@@ -50,10 +8,19 @@
    -  **-f** or **--input_file**: import the text from file. The
       translation will saved on the JSON format file.
 
-.. container:: cell markdown
+Install Requirments
+=====================
 
-   .. rubric:: (1) Usage and Arguments
-      :name: 1-usage-and-arguments
+   .. code:: python
+
+      pip install git+https://github.com/UBC-NLP/turjuman.git --q
+
+   .. container:: output stream stdout
+
+
+
+Usage and Arguments
+=====================
 
 .. container:: cell code
 
@@ -237,7 +204,9 @@
          Length: 732 [text/plain]
          Saving to: ‘samples.txt’
 
-         samples.txt           0%[                    ]       0  --.-KB/s               samples.txt         100%[===================>]     732  --.-KB/s    in 0s      
+         
+samples.txt           0%[                    ]       0  --.-KB/s               
+samples.txt         100%[===================>]     732  --.-KB/s    in 0s      
 
          2022-05-18 00:01:54 (34.3 MB/s) - ‘samples.txt’ saved [732/732]
 
