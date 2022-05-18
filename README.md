@@ -82,7 +82,7 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
 <td> <a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_interactive_cli.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></td>
 </tr>
 </table>
-### (2) Integrate Turjuman wit your python code
+### (2) Integrate Turjuman with your python code
 <table style='border:1px red;' width='100%'>
 <tr><td><b>Function</b></td><td> <b>Content</b></td><td><b>Colab link</b></td></tr>
 <td>translate <br> translate_from_file</td>
