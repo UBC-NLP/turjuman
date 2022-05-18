@@ -68,7 +68,7 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
         <li> Example</li>
     </ul>
 </td>
-<td> </td>
+<a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_score_cli.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
 </tr>
 <tr>
 <td>turjuman_interactive</td>
