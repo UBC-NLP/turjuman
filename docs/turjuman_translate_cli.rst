@@ -1,32 +1,29 @@
-turjuman_translate_cli
+Translate Command Line
 =====================
-Turjuman Command Line Interface (CLI) Turjuman cli `turjuman_translate_cli` support two
+Turjuman Command Line Interface (CLI) Turjuman cli ``turjuman_translate_cli`` support two
    types of inputs:
 
-   -  **-t** or **--text**: Write you input text directly on the command
+   -  ``-t`` or ``--text``: Write you input text directly on the command
       line. The translation will display directly on the terminal.
-   -  **-f** or **--input_file**: import the text from file. The
+   -  ``-f`` or ``--input_file``: import the text from file. The
       translation will saved on the JSON format file.
 
-Install Requirments
-=====================
+Installation
+-------------------
 
    .. code:: python
 
       pip install git+https://github.com/UBC-NLP/turjuman.git --q
 
-   .. container:: output stream stdout
-
-
 
 Usage and Arguments
-=====================
+-------------------
 
 .. container:: cell code
 
    .. code:: python
 
-       !turjuman_translate -h
+       turjuman_translate -h
 
    .. container:: output stream stdout
 
@@ -75,29 +72,25 @@ Usage and Arguments
                                  The maximum number of source examples utilized in one
                                  iteration
 
-.. container:: cell markdown
-
-   .. rubric:: (2) Translate using beam search (default)
-      :name: 2-translate-using-beam-search-default
-
-   -  **Beam search** is the *default* generation method on Turjuman
+Translate using beam search (default)
+-------------------------------------
+``Beam search`` is the ``default`` generation method on Turjuman
    -  Beam search default setting:
 
-      -  **-s** or **--seq_length**: The maximum sequence length value,
+      -  ``-s`` or ``--seq_length``: The maximum sequence length value,
          *default vlaue is 300*
-      -  **-o** or **--max_outputs**: The maxmuim of the output
-         tanslations (*default vlaue is 1*)
-      -  **-b** or **--num_beams NUM_BEAMS**: Number of beams (*default
-         vlaue is 1*)
-      -  **-n** or **--no_repeat_ngram_size**: Number of n-gram that
-         doesn't appears twice (*default vlaue is 2*)
+      -  ``-o`` or ``--max_outputs``: The maxmuim of the output
+         tanslations (``default vlaue is 1``)
+      -  ``-b`` or ``--num_beams NUM_BEAMS``: Number of beams (``default
+         vlaue is 1``)
+      -  ``-n`` or ``--no_repeat_ngram_size``: Number of n-gram that
+         doesn't appears twice (``default vlaue is 2``)
 
 .. container:: cell code
 
    .. code:: python
 
-       # Beam search is the default generation method on Turjuman
-       !turjuman_translate --text "As US reaches one million COVID deaths, how are Americans coping?"
+       turjuman_translate --text "As US reaches one million COVID deaths, how are Americans coping?"
 
    .. container:: output stream stdout
 
@@ -123,7 +116,7 @@ Usage and Arguments
 
    -  Greedy search default setting:
 
-      -  **-s** or **--seq_length**: The maximum sequence length value,
+      -  ``-s`` or ``--seq_length``: The maximum sequence length value,
          *default vlaue is 300*
 
 .. container:: cell code
@@ -150,13 +143,13 @@ Usage and Arguments
 
    -  Sampling search default setting:
 
-      -  **-s** or **--seq_length**: The maximum sequence length value,
+      -  ``-s`` or ``--seq_length``: The maximum sequence length value,
          *default vlaue is 300*
-      -  **-o** or **--max_outputs**: The maxmuim of the output
+      -  ``-o`` or ``--max_outputs``: The maxmuim of the output
          tanslations (*default vlaue is 1*)
-      -  **-k** or **--top_k**: Sample from top K likely next words
+      -  ``-k`` or ``--top_k``: Sample from top K likely next words
          instead of all words (*default vlaue is 50*)
-      -  **-p** or **--top_p**: Sample from the smallest set whose
+      -  ``-p`` or ``--top_p``: Sample from the smallest set whose
          cumulative probability mass exceeds p for next words (*default
          vlaue is 0.95*)
 
@@ -182,9 +175,9 @@ Usage and Arguments
    .. rubric:: (5) Read and translate text from file
       :name: 5-read-and-translate-text-from-file
 
-   -  **-f** or **--input_file**: import the text from file. The
+   -  ``-f`` or ``--input_file``: import the text from file. The
       translation will saved on the JSON format file
-   -  **-bs** or **--batch_size**: The maximum number of source examples
+   -  ``-bs`` or ``--batch_size``: The maximum number of source examples
       utilized in one iteration (default value is 25)
 
 .. container:: cell code
