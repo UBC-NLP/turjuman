@@ -11,23 +11,19 @@ Turjuman Command Line Interface (CLI) Turjuman cli ``turjuman_translate_cli`` su
 Installation
 -------------------
 
-   .. code:: python
+.. code-block:: console
 
       pip install git+https://github.com/UBC-NLP/turjuman.git --q
 
 
 Usage and Arguments
 -------------------
-
-.. container:: cell code
-
-   .. code:: python
+.. code-block:: console
 
        turjuman_translate -h
 
-   .. container:: output stream stdout
-
-      ::
+Outputs
+.. code-block:: console
 
          usage: turjuman_translate [-h] [-t TEXT] [-f INPUT_FILE] [-m SEARCH_METHOD]
                                    [-s SEQ_LENGTH] [-o MAX_OUTPUTS] [-b NUM_BEAMS]
@@ -92,7 +88,22 @@ Translate using beam search (default)
 
        turjuman_translate --text "As US reaches one million COVID deaths, how are Americans coping?"
 
+   .. container:: output stream stdout
 
+      ::
+
+         2022-05-18 00:00:27 | INFO | turjuman.translate_cli | Turjuman Translate Command Line Interface
+         2022-05-18 00:00:27 | INFO | turjuman.translate_cli | Translate from input sentence
+         2022-05-18 00:00:27 | INFO | turjuman.translate_cli | Loading model from UBC-NLP/turjuman
+         Downloading: 100% 1.85k/1.85k [00:00<00:00, 1.71MB/s]
+         Downloading: 100% 565/565 [00:00<00:00, 460kB/s]
+         Downloading: 100% 2.32M/2.32M [00:00<00:00, 12.4MB/s]
+         Downloading: 100% 1.74k/1.74k [00:00<00:00, 1.54MB/s]
+         Downloading: 100% 565/565 [00:00<00:00, 455kB/s]
+         Downloading: 100% 1.05G/1.05G [00:22<00:00, 51.3MB/s]
+         2022-05-18 00:00:57 | INFO | turjuman.translate_cli | Using beam search
+         2022-05-18 00:01:01 | ERROR | turjuman.translate_cli | extract outputs
+         target: وبينما تصل الولايات المتحدة إلى مليون حالة وفاة من فيروس كوفيد-19 ، كيف يتعامل الأمريكيون مع ذلك ؟
 
 .. container:: cell markdown
 
