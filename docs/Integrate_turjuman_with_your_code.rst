@@ -24,7 +24,7 @@ Import related packges
 
 Inital the logger and set ``cache_dir``
 
- .. code:: python
+.. code:: python
 
       logging.basicConfig(
           format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
@@ -40,11 +40,6 @@ Create turjuman object
 
       torj = turjuman.turjuman(logger, cache_dir)
 
-The output
-
-.. code-block:: console
-
-         2022-05-18 19:00:11 | INFO | turjuman.translate | Loading model from UBC-NLP/turjuman
 
 
 Translate using beam search (default)
@@ -65,10 +60,6 @@ Translate using beam search (default)
       print (target)
 
 .. code-block:: console
-         2022-05-18 19:02:59 | INFO | turjuman.translate | Using beam search
-         2022-05-18 19:03:02 | INFO | turjuman.translate | Extract outputs
-
-.. code-block:: console
 
          {'source': 'As US reaches one million COVID deaths, how are Americans coping?', 'target': ['وبينما تصل الولايات المتحدة إلى مليون حالة وفاة من فيروس كوفيد-19 ، كيف يتعامل الأمريكيون مع ذلك ؟']}
 
@@ -81,11 +72,6 @@ Translate using greedy search
       greedy_options = {"search_method":"greedy", "seq_length": 300}
       target = torj.translate("As US reaches one million COVID deaths, how are Americans coping?",**greedy_options)
       print (target)
-
-.. code-block:: console
-
-         2022-05-18 19:04:37 | INFO | turjuman.translate | Using greedy search
-         2022-05-18 19:04:39 | INFO | turjuman.translate | Extract outputs
 
 .. code-block:: console
 
@@ -107,10 +93,6 @@ Translate using sampling search
       target = torj.translate("As US reaches one million COVID deaths, how are Americans coping?",**sampling_options)
       print (target)
 
-.. code-block:: console
-
-         2022-05-18 19:09:12 | INFO | turjuman.translate | Using sampling search
-         2022-05-18 19:09:14 | INFO | turjuman.translate | Extract outputs
 
 .. code-block:: console
 
