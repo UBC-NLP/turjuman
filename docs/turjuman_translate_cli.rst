@@ -74,7 +74,7 @@ Translate using beam search (default)
 
        turjuman_translate --text "As US reaches one million COVID deaths, how are Americans coping?"
 
-The outputs:
+The output:
 
 .. code-block:: console
 
@@ -168,5 +168,3 @@ Google Colab Link
 -----------------
 You can find the full examples on the Google Colab on the following link
 https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb
-
-`AraT5 model <https://github.com/UBC-NLP/araT5>`__

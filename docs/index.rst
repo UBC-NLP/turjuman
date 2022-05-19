@@ -1,5 +1,3 @@
-Turjuman Toolkit Documentation
-=====================
 .. raw:: html
 
    <p align="center">
@@ -23,3 +21,4 @@ TURJUMAN TURJUMAN, a neural toolkit for translating from 20 languages into Moder
 
     installation
     turjuman_translate_cli
+    turjuman_score_cli
