@@ -26,6 +26,6 @@ TURJUMAN TURJUMAN, a neural toolkit for translating from 20 languages into Moder
 
 .. toctree::
     :maxdepth: 1
-    :caption: Integrate with your code
+    :caption: Integration
 
     Integrate_turjuman_with_your_code

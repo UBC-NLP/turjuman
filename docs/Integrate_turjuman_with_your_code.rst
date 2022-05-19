@@ -1,4 +1,4 @@
-Integrate turjuman with your python code
+Integrate turjuman with python code
 =========================================
 
 .. container:: cell markdown
@@ -12,7 +12,7 @@ Integrate turjuman with your python code
 
 .. container:: cell markdown
 
-(1) Initial turjuman object
+Initial turjuman object
 ----------------------------
 Import related packges 
 
