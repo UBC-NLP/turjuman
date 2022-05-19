@@ -62,6 +62,16 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
  </td>
 </tr>
 <tr>
+<td>turjuman_interactive</td>
+<td>
+    <ul>
+        <li> Usage and Arguments </li>
+        <li> Examples</li>
+    </ul>
+</td>
+<td> <a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_interactive_cli.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></td>
+</tr>
+<tr>
 <td>turjuman_score</td>
 <td>
     <ul>
@@ -72,16 +82,7 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
 </td>
 <td> <a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_score_cli.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></a></td>
 </tr>
-<tr>
-<td>turjuman_interactive</td>
-<td>
-    <ul>
-        <li> Usage and Arguments </li>
-        <li> Examples</li>
-    </ul>
-</td>
-<td> <a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_interactive_cli.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></td>
-</tr>
+
 </table>
 
 ### (2) Integrate Turjuman with your python code

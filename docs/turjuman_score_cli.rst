@@ -3,7 +3,7 @@ Score Command Line
 
 
 
-Turjuman score cli computes the bleu score between two files:
+Turjuman score cli ``turjuman_score`` computes the bleu score between two files:
 
    -  ``-h`` or ``--hyp_file``: The hypothesis (predicted/generated translation) file path.
    -  ``-g`` or ``--ref_file``: The references (gold translation) file path.
