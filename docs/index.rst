@@ -9,5 +9,6 @@ TURJUMAN TURJUMAN, a neural toolkit for translating from 20 languages into Moder
 .. toctree::
     :maxdepth: 1
     :caption: Command Line Interfaces
+
     installation
     turjuman_translate_cli
