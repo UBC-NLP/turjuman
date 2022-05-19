@@ -91,8 +91,9 @@ The output:
          2022-05-18 00:01:01 | ERROR | turjuman.translate_cli | extract outputs
          target: وبينما تصل الولايات المتحدة إلى مليون حالة وفاة من فيروس كوفيد-19 ، كيف يتعامل الأمريكيون مع ذلك ؟
 
-(3) Translate using greedy search
+Translate using greedy search
 -----------------------------------
+
  ``Greedy search`` default setting:
    -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``*``default vlaue is 300``*``)
 
@@ -110,8 +111,9 @@ The output:
          2022-05-18 00:01:16 | ERROR | turjuman.translate_cli | extract outputs
          target: وبما أن الولايات المتحدة تصل إلى مليون حالة وفاة من فيروس كوفيد-19 ، كيف يمكن للولايات المتحدة أن تتصدى لهذا ؟
 
-(4) Translate using sampling search
+Translate using sampling search
 ------------------------------------
+
 ``Sampling search`` default setting:
 
       -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``default vlaue is 300``)
@@ -132,8 +134,9 @@ The output:
          2022-05-18 00:01:47 | ERROR | turjuman.translate_cli | extract outputs
          target: وبوصول الولايات المتحدة الأمريكية إلى مليون حالة وفاة بسبب كوفيد-19 ، كيف يمكن الأميركيين أن يتعاملوا مع ذلك ؟
 
-(5) Read and translate text from file
+Read and translate text from file
 --------------------------------------
+
    -  ``-f`` or ``--input_file``: import the text from file. The translation will saved on the JSON format file
    -  ``-bs`` or ``--batch_size``: The maximum number of source examples utilized in one iteration (``default value is 25``)
 
@@ -166,5 +169,6 @@ The output:
 
 Google Colab Link
 -----------------
+
 You can find the full examples on the Google Colab on the following link
 https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb
