@@ -11,7 +11,7 @@ Interactive Command Line
 
 .. raw:: html
 
-   <img src="https://raw.githubusercontent.com/UBC-NLP/turjuman/main/examples/turjuman_interactive.jpg" alt="turjuman_interactive" width="65%" height="65%"/>
+   <img src="https://raw.githubusercontent.com/UBC-NLP/turjuman/main/examples/turjuman_interactive.jpg" alt="turjuman_interactive"/>
 
 
 
