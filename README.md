@@ -87,7 +87,7 @@ The [full documentation](https://turjuman.readthedocs.io/en/latest/) contains in
 
 ### (2) Integrate Turjuman with your python code
 <table style='border:1px red;' width='100%'>
-<tr><td><b>Function</b></td><td> <b>Content</b></td><td><b>Colab link</b></td></tr>
+<tr><td><b>Functions</b></td><td> <b>Content</b></td><td><b>Colab link</b></td></tr>
 <td>translate <br> translate_from_file</td>
 <td>
     <ul>
