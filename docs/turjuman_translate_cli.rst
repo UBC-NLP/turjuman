@@ -4,6 +4,7 @@ Translate Command Line
 
 Usage and Arguments
 -------------------
+
 .. code-block:: console
 
        turjuman_translate -h
@@ -14,7 +15,9 @@ Turjuman Command Line Interface (CLI) Turjuman cli ``turjuman_translate_cli`` su
    -  ``-f`` or ``--input_file``: import the text from file. The translation will saved on the JSON format file.
 
 ``turjuman_translate_cli`` has the following optional arguments.
+
 .. code-block:: console
+
          usage: turjuman_translate [-h] [-t TEXT] [-f INPUT_FILE] [-m SEARCH_METHOD]
                                    [-s SEQ_LENGTH] [-o MAX_OUTPUTS] [-b NUM_BEAMS]
                                    [-n NO_REPEAT_NGRAM_SIZE] [-k TOP_K] [-p TOP_P]
@@ -69,10 +72,13 @@ Translate using beam search (default)
       -  ``-n`` or ``--no_repeat_ngram_size``: Number of n-gram that doesn't appears twice (``default vlaue is 2``)
 
 .. code-block:: console
+
        turjuman_translate --text "As US reaches one million COVID deaths, how are Americans coping?"
 
 The outputs:
+
 .. code-block:: console
+
          2022-05-18 00:00:27 | INFO | turjuman.translate_cli | Turjuman Translate Command Line Interface
          2022-05-18 00:00:27 | INFO | turjuman.translate_cli | Translate from input sentence
          2022-05-18 00:00:27 | INFO | turjuman.translate_cli | Loading model from UBC-NLP/turjuman
@@ -96,6 +102,7 @@ The outputs:
       turjuman_translate --search_method greedy --text "As US reaches one million COVID deaths, how are Americans coping?"
 
 The output:
+
 .. code-block:: console
          2022-05-18 00:01:07 | INFO | turjuman.translate_cli | Turjuman Translate Command Line Interface
          2022-05-18 00:01:07 | INFO | turjuman.translate_cli | Translate from input sentence
@@ -118,6 +125,7 @@ The output:
       turjuman_translate --search_method sampling --text "As US reaches one million COVID deaths, how are Americans coping?"
 
 .. code-block:: console
+
          2022-05-18 00:01:38 | INFO | turjuman.translate_cli | Turjuman Translate Command Line Interface
          2022-05-18 00:01:38 | INFO | turjuman.translate_cli | Translate from input sentence
          2022-05-18 00:01:38 | INFO | turjuman.translate_cli | Loading model from UBC-NLP/turjuman
@@ -137,6 +145,7 @@ The output:
       turjuman_translate --input_file samples.txt
 
 .. code-block:: console
+   
          2022-05-18 00:02:08 | INFO | turjuman.translate_cli | Turjuman Translate Command Line Interface
          2022-05-18 00:02:08 | INFO | turjuman.translate_cli | Translate from input file samples.txt
          2022-05-18 00:02:08 | INFO | turjuman.translate_cli | Loading model from UBC-NLP/turjuman
