@@ -1,6 +1,5 @@
 Translate Command Line
 =====================
-:colab_example_url: https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb
 
 Usage and Arguments
 -------------------
@@ -145,7 +144,7 @@ The output:
       turjuman_translate --input_file samples.txt
 
 .. code-block:: console
-   
+
          2022-05-18 00:02:08 | INFO | turjuman.translate_cli | Turjuman Translate Command Line Interface
          2022-05-18 00:02:08 | INFO | turjuman.translate_cli | Translate from input file samples.txt
          2022-05-18 00:02:08 | INFO | turjuman.translate_cli | Loading model from UBC-NLP/turjuman
@@ -164,3 +163,10 @@ The output:
          translate: 100% 1/1 [00:18<00:00, 18.90s/it]
          2022-05-18 00:02:38 | ERROR | turjuman.translate_cli | extract outputs
          2022-05-18 00:02:38 | INFO | turjuman.translate_cli | The translation are saved on samples_Turjuman_translate.json
+
+Google Colab Link
+-----------------
+You can find the full examples on the Google Colab on the following link
+https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb
+
+`AraT5 model <https://github.com/UBC-NLP/araT5>`__
