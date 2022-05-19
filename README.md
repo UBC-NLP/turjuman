@@ -27,7 +27,9 @@ TURJUMAN, a neural toolkit for translating from 20 languages into Modern Standar
 - To install turjuman and develop directly using pip:
  ```shell
     pip install turjuman
+```
     or 
+ ```shell
     pip install git+https://github.com/UBC-NLP/turjuman.git
  ```
 - To install turjuman and develop locally:
