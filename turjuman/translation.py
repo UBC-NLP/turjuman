@@ -52,24 +52,35 @@ class translate_from_file():
         for step, batch in enumerate(sources_dataloader):
             # print ("batch#{}".format(step))
             with torch.no_grad():
-                generated_tokens = self.accelerator.unwrap_model(self.model).generate(
-                    batch["input_ids"],
-                    attention_mask=batch["attention_mask"],
-                    **gen_kwargs,
-                )
-                generated_tokens = self.accelerator.pad_across_processes(
-                    generated_tokens, dim=1, pad_index=self.tokenizer.pad_token_id
-                )
-                generated_tokens = self.accelerator.gather(generated_tokens).cpu().numpy()
-                decoded_preds = self.tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
-                decoded_preds = [pred.strip() for pred in decoded_preds]
-                # If we are in a multiprocess environment, the last batch has duplicates
-                if self.accelerator.num_processes > 1:
-                    if step == len(sources_dataloader):
-                        decoded_preds = decoded_preds[: len(sources_dataloader.dataset) - samples_seen]
-                # print(decoded_preds)
+
+                outputs = self.model.generate(
+                        input_ids=batch["input_ids"], 
+                        attention_mask=batch["attention_mask"],
+                        **gen_kwargs,
+                    )
+
+                decoded_preds = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
                 generated_text.extend(decoded_preds)
                 pbar.update(1)
+
+                # generated_tokens = self.accelerator.unwrap_model(self.model).generate(
+                #     batch["input_ids"],
+                #     attention_mask=batch["attention_mask"],
+                #     **gen_kwargs,
+                # )
+                # generated_tokens = self.accelerator.pad_across_processes(
+                #     generated_tokens, dim=1, pad_index=self.tokenizer.pad_token_id
+                # )
+                # generated_tokens = self.accelerator.gather(generated_tokens).cpu().numpy()
+                # decoded_preds = self.tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
+                # decoded_preds = [pred.strip() for pred in decoded_preds]
+                # # If we are in a multiprocess environment, the last batch has duplicates
+                # if self.accelerator.num_processes > 1:
+                #     if step == len(sources_dataloader):
+                #         decoded_preds = decoded_preds[: len(sources_dataloader.dataset) - samples_seen]
+                # # print(decoded_preds)
+                # generated_text.extend(decoded_preds)
+                # pbar.update(1)
         pbar.close()
         sources_text = [src['text'] for src in sources]
         outputs = extract_output(sources_text, generated_text, gen_kwargs['num_return_sequences'], self.logger)

@@ -11,6 +11,7 @@ import pandas as pd
 # import math
 from turjuman.translation import translate_from_file
 from turjuman.helper import *
+import regex
 class turjuman():
     def __init__(self, logger, cache_dir, model_path=None):
         self.logger = logger
@@ -213,6 +214,9 @@ class turjuman():
 
     def translate_from_text(self, text, search_method, seq_length=512, max_outputs=1, num_beams=5, no_repeat_ngram_size=2, top_p=0.95, top_k=50):
         if self.validate(search_method, max_outputs, num_beams) is None:
+            return None
+        if len(regex.sub('\s+','',text))<1:
+            self.logger.info("Source should be at least 2 characters")
             return None
         sources = [text]
         outputs = self.translate(sources, search_method, seq_length, max_outputs, num_beams, no_repeat_ngram_size, top_p, top_k)
