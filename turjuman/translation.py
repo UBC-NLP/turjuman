@@ -100,21 +100,22 @@ class translate_from_file():
     #     # print (predictions)
     
     def translate(self, filepath, batch_size, gen_kwargs):
-        args = Seq2SeqTrainingArguments(
-                output_dir="./",
-                per_device_train_batch_size=batch_size,
-                per_device_eval_batch_size=batch_size,
-                predict_with_generate=True,
-                # fp16=True,
-                )
+        # args = Seq2SeqTrainingArguments(
+        #         output_dir="./",
+        #         per_device_train_batch_size=batch_size,
+        #         per_device_eval_batch_size=batch_size,
+        #         predict_with_generate=True,
+        #         # fp16=True,
+        #         )
         self.gen_kwargs = gen_kwargs
         # self.translate_tranier(filepath, batch_size, gen_kwargs)
         # print (gen_kwargs)
         sources=self.get_file_data(filepath)
         generated_text=[]
         sources_dataloader = DataLoader(sources, collate_fn=self.data_collator, batch_size=batch_size)
-        self.logger.info("Working on {}".format(args.device))
-        self.model.to(args.device)
+        device = ('cuda' if torch.cuda.is_available() else 'cpu')
+        self.logger.info(">>>Working on {}".format(device))
+        self.model.to(device)
         self.model.eval()
         samples_seen = 0
         num_batches = len(sources_dataloader)
