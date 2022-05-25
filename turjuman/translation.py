@@ -114,13 +114,13 @@ class translate_from_file():
         generated_text=[]
         sources_dataloader = DataLoader(sources, collate_fn=self.data_collator, batch_size=batch_size)
         device = ('cuda' if torch.cuda.is_available() else 'cpu')
-        self.logger.info(">>>Working on {}".format(device))
+        self.logger.info("Working on {}".format(device))
         self.model.to(device)
         self.model.eval()
         samples_seen = 0
         num_batches = len(sources_dataloader)
         pbar = tqdm(total=num_batches, desc="translate")
-        self.logger.info("Translating with batch_size {} and #batches = {}".format(batch_size, num_batches))
+        self.logger.info("Translating with batch_size {} and #samples = {}".format(batch_size, num_batches))
         for step, batch in enumerate(sources_dataloader):
             # print ("batch#{}".format(step))
             with torch.no_grad():
