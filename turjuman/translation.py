@@ -122,6 +122,7 @@ class translate_from_file():
         pbar = tqdm(total=num_batches, desc="translate")
         self.logger.info("Translating with batch_size {} and #samples = {}".format(batch_size, num_batches))
         for step, batch in enumerate(sources_dataloader):
+            batch = {k: v.to(device) for k, v in batch.items()}
             # print ("batch#{}".format(step))
             with torch.no_grad():
 
