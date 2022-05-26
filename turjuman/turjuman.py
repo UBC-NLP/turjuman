@@ -31,13 +31,13 @@ class turjuman():
         model = AutoModelForSeq2SeqLM.from_pretrained(model_path, cache_dir=self.cache_dir)
         ##### GPU check ####
         if torch.cuda.is_available():
+            n_gpu = torch.cuda.device_count()
+            device_ids = GPUtil.getAvailable(limit = 8)
             self.device = 'cuda'
-            if torch.cuda.device_count() == 1:
-                self.logger.info("Run the model with one GPU")
-                model = model.to(self.device)
+            if n_gpu == 1:
+               self.logger.info("Run the model with one-GPU [{}] with max 8 GPUs".format(n_gpu, str(device_ids)))
+               model = model.to(self.device)
             else:
-                n_gpu = torch.cuda.device_count()
-                device_ids = GPUtil.getAvailable(limit = 8)
                 self.logger.info("Run the model with {} GPUs [{}] with max 8 GPUs".format(n_gpu, str(device_ids)))
                 torch.backends.cudnn.benchmark = True
                 model = model.to(self.device)
