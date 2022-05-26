@@ -8,7 +8,7 @@ from datasets import load_dataset
 from tqdm import tqdm
 from turjuman.helper import *
 class translate_from_file():
-    def __init__(self, model, tokenizer, cache_dir, logger, device):
+    def __init__(self, model, tokenizer, cache_dir, logger):
         self.logger = logger
         self.model=model
         self.tokenizer=tokenizer
@@ -18,7 +18,6 @@ class translate_from_file():
         # self.data_collator  = DataCollatorForSeq2Seq(tokenizer, model=model)
         self.accelerator = Accelerator()
         self.gen_kwargs=None
-        self.device = device
 
 
 
