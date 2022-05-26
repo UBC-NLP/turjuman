@@ -7,7 +7,7 @@ import pandas as pd
 import torch.nn as nn
 import torch
 import GPUtil
-from zmq import device
+# from zmq import device
 # from hurry.filesize import size
 # import psutil
 # from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
