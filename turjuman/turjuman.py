@@ -21,6 +21,7 @@ class turjuman():
         self.cache_dir=cache_dir
         self.model, self.tokenizer = self.load_model(model_path)
         # self.num_cpus=len(psutil.Process().cpu_affinity())
+        self.device="cpu"
 
     
     def load_model(self, model_path):
@@ -30,18 +31,19 @@ class turjuman():
         model = AutoModelForSeq2SeqLM.from_pretrained(model_path, cache_dir=self.cache_dir)
         ##### GPU check ####
         if torch.cuda.is_available():
-            device = 'cuda'
+            self.device = 'cuda'
             if torch.cuda.device_count() == 1:
                 self.logger.info("Run the model with one GPU")
-                model = model.to(device)
+                model = model.to(self.device)
             else:
                 n_gpu = torch.cuda.device_count()
-                self.logger.info("Run the model with {} GPUs with max 8 GPUs".format(n_gpu))
                 device_ids = GPUtil.getAvailable(limit = 8)
+                self.logger.info("Run the model with {} GPUs [{}] with max 8 GPUs".format(n_gpu, str(device_ids)))
                 torch.backends.cudnn.benchmark = True
-                model = model.to(device)
+                model = model.to(self.device)
                 model = nn.DataParallel(model, device_ids=device_ids)
         else:
+            self.device="cpu"
             self.logger.info("Run the model with CPU")
             model = model
         return model, tokenizer
@@ -179,7 +181,7 @@ class turjuman():
         
         gen_kwargs = get_gen_kwargs(search_method, seq_length, max_outputs, num_beams, no_repeat_ngram_size, top_p, top_k, self.logger)
         # print (gen_kwargs)
-        tf = translate_from_file(self.model, self.tokenizer, self.cache_dir, self.logger)
+        tf = translate_from_file(self.model, self.tokenizer, self.cache_dir, self.logger, self.device)
         outputs = tf.translate(input_file, batch_size, gen_kwargs)
         df = pd.DataFrame.from_dict(outputs)
         df.to_json(output_file, orient='records', lines=True)

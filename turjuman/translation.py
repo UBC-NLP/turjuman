@@ -8,7 +8,7 @@ from datasets import load_dataset
 from tqdm import tqdm
 from turjuman.helper import *
 class translate_from_file():
-    def __init__(self, model, tokenizer, cache_dir, logger):
+    def __init__(self, model, tokenizer, cache_dir, logger, device):
         self.logger = logger
         self.model=model
         self.tokenizer=tokenizer
@@ -18,6 +18,7 @@ class translate_from_file():
         # self.data_collator  = DataCollatorForSeq2Seq(tokenizer, model=model)
         self.accelerator = Accelerator()
         self.gen_kwargs=None
+        self.device = device
 
 
 
@@ -113,15 +114,16 @@ class translate_from_file():
         sources=self.get_file_data(filepath)
         generated_text=[]
         sources_dataloader = DataLoader(sources, collate_fn=self.data_collator, batch_size=batch_size)
-        device = ('cuda' if torch.cuda.is_available() else 'cpu')
-        self.logger.info("Working on {}".format(device))
-        self.model.to(device)
+        # device = ('cuda' if torch.cuda.is_available() else 'cpu')
+        # self.logger.info("Working on {}".format(device))
+        # self.model.to(device)
         self.model.eval()
         samples_seen = 0
         num_batches = len(sources_dataloader)
         pbar = tqdm(total=num_batches, desc="translate")
         self.logger.info("Translating with batch_size {} and #samples = {}".format(batch_size, num_batches))
         for step, batch in enumerate(sources_dataloader):
+            batch = tuple(t.to(self.device) for t in batch)
             batch = {k: v.to(device) for k, v in batch.items()}
             # print ("batch#{}".format(step))
             with torch.no_grad():
