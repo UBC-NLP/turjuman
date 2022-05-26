@@ -4,6 +4,9 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 # from pathlib import Path
 # import dask.dataframe as dd
 import pandas as pd
+import torch.nn as nn
+import torch
+import GPUtil
 # from hurry.filesize import size
 # import psutil
 # from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
@@ -25,6 +28,22 @@ class turjuman():
         self.logger.info("Loading model from {}".format(model_path))
         tokenizer = AutoTokenizer.from_pretrained(model_path, cache_dir=self.cache_dir)  
         model = AutoModelForSeq2SeqLM.from_pretrained(model_path, cache_dir=self.cache_dir)
+        ##### GPU check ####
+        if torch.cuda.is_available():
+            device = 'cuda'
+            if torch.cuda.device_count() == 1:
+                self.logger.info("Run the model with one GPU")
+                model = model.to(device)
+            else:
+                n_gpu = torch.cuda.device_count()
+                self.logger.info("Run the model with {} GPUs with max 8 GPUs".format(n_gpu))
+                device_ids = GPUtil.getAvailable(limit = 8)
+                torch.backends.cudnn.benchmark = True
+                model = model.to(device)
+                model = nn.DataParallel(model, device_ids=device_ids)
+        else:
+            self.logger.info("Run the model with CPU")
+            model = model
         return model, tokenizer
     
     def validate(self, search_method, max_outputs, num_beams):
