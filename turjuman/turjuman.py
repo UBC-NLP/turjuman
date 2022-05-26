@@ -7,6 +7,7 @@ import pandas as pd
 import torch.nn as nn
 import torch
 import GPUtil
+from zmq import device
 # from hurry.filesize import size
 # import psutil
 # from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
@@ -21,13 +22,13 @@ class turjuman():
         self.cache_dir=cache_dir
         self.model, self.tokenizer = self.load_model(model_path)
         # self.num_cpus=len(psutil.Process().cpu_affinity())
-        self.device=self.set_device()
+        # self.device=self.set_device()
 
-    def set_device(self):
-        if torch.cuda.is_available():
-            return "cuda"
-        else:
-            return "cpu"
+    # def set_device(self):
+    #     if torch.cuda.is_available():
+    #         return "cuda"
+    #     else:
+    #         return "cpu"
     
     def load_model(self, model_path):
         model_path = model_path if model_path else "UBC-NLP/turjuman"
@@ -36,17 +37,19 @@ class turjuman():
         model = AutoModelForSeq2SeqLM.from_pretrained(model_path, cache_dir=self.cache_dir)
         ##### GPU check ####
         if torch.cuda.is_available():
+            device="cuda"
             n_gpu = torch.cuda.device_count()
             device_ids = GPUtil.getAvailable(limit = 8)
             if n_gpu == 1:
                self.logger.info("Run the model with one-GPU [{}] with max 8 GPUs".format(n_gpu, str(device_ids)))
-               model = model.to(self.device)
+               model = model.to(device)
             else:
                 self.logger.info("Run the model with {} GPUs [{}] with max 8 GPUs".format(n_gpu, str(device_ids)))
                 torch.backends.cudnn.benchmark = True
-                model = model.to(self.device)
+                model = model.to(device)
                 model = nn.DataParallel(model, device_ids=device_ids)
         else:
+            device="cpu"
             self.logger.info("Run the model with CPU")
             model = model
         return model, tokenizer
@@ -184,7 +187,7 @@ class turjuman():
         
         gen_kwargs = get_gen_kwargs(search_method, seq_length, max_outputs, num_beams, no_repeat_ngram_size, top_p, top_k, self.logger)
         # print (gen_kwargs)
-        tf = translate_from_file(self.model, self.tokenizer, self.cache_dir, self.logger, self.device)
+        tf = translate_from_file(self.model, self.tokenizer, self.cache_dir, self.logger)
         outputs = tf.translate(input_file, batch_size, gen_kwargs)
         df = pd.DataFrame.from_dict(outputs)
         df.to_json(output_file, orient='records', lines=True)
