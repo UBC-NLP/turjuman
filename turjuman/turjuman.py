@@ -21,8 +21,13 @@ class turjuman():
         self.cache_dir=cache_dir
         self.model, self.tokenizer = self.load_model(model_path)
         # self.num_cpus=len(psutil.Process().cpu_affinity())
-        self.device="cpu"
+        self.device=self.set_device()
 
+    def set_device(self):
+        if torch.cuda.is_available():
+            return "cuda"
+        else:
+            return "cpu"
     
     def load_model(self, model_path):
         model_path = model_path if model_path else "UBC-NLP/turjuman"
@@ -33,7 +38,6 @@ class turjuman():
         if torch.cuda.is_available():
             n_gpu = torch.cuda.device_count()
             device_ids = GPUtil.getAvailable(limit = 8)
-            self.device = 'cuda'
             if n_gpu == 1:
                self.logger.info("Run the model with one-GPU [{}] with max 8 GPUs".format(n_gpu, str(device_ids)))
                model = model.to(self.device)
@@ -43,7 +47,6 @@ class turjuman():
                 model = model.to(self.device)
                 model = nn.DataParallel(model, device_ids=device_ids)
         else:
-            self.device="cpu"
             self.logger.info("Run the model with CPU")
             model = model
         return model, tokenizer
