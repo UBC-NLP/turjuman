@@ -103,22 +103,24 @@ class translate_from_file():
         print (">>>> device name", device)
         batch = {k: v.to(device) for k, v in batch.items()}
         with torch.no_grad():
-            generated_tokens = self.accelerator.unwrap_model(self.model).generate(
+            
+            generated_tokens = self.model.generate(
                     batch["input_ids"],
                     attention_mask=batch["attention_mask"],
                     **gen_kwargs,
             )
-            generated_tokens = self.accelerator.pad_across_processes(
-                    generated_tokens, dim=1, pad_index=self.tokenizer.pad_token_id
-            )
-            generated_tokens = self.accelerator.gather(generated_tokens).cpu().numpy()
-            decoded_preds = self.tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
-            decoded_preds = [pred.strip() for pred in decoded_preds]
-                # If we are in a multiprocess environment, the last batch has duplicates
-            if self.accelerator.num_processes > 1:
-                if step == len(sources_dataloader):
-                    decoded_preds = decoded_preds[: len(sources_dataloader.dataset) - samples_seen]
-        return decoded_preds
+            generated_text = self.tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
+            # generated_tokens = self.accelerator.pad_across_processes(
+            #         generated_tokens, dim=1, pad_index=self.tokenizer.pad_token_id
+            # )
+            # generated_tokens = self.accelerator.gather(generated_tokens).cpu().numpy()
+            # decoded_preds = self.tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
+            # decoded_preds = [pred.strip() for pred in decoded_preds]
+            # # If we are in a multiprocess environment, the last batch has duplicates
+            # if self.accelerator.num_processes > 1:
+            #     if step == len(sources_dataloader):
+            #         decoded_preds = decoded_preds[: len(sources_dataloader.dataset) - samples_seen]
+        return generated_text
     def translate(self, filepath, batch_size, gen_kwargs):
         
         self.gen_kwargs = gen_kwargs
