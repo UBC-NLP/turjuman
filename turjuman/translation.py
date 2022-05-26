@@ -113,7 +113,7 @@ class translate_from_file():
         sources=self.get_file_data(filepath)
         generated_text=[]
         sources_dataloader = DataLoader(sources, collate_fn=self.data_collator, batch_size=batch_size)
-        device = ('cuda:0' if torch.cuda.is_available() else 'cpu')
+        device = ('cuda' if torch.cuda.is_available() else 'cpu')
         self.logger.info(">>>>>Working on {}".format(device))
         # self.model.to(device)
         self.model.eval()
