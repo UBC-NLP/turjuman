@@ -37,14 +37,14 @@ class turjuman():
         model = AutoModelForSeq2SeqLM.from_pretrained(model_path, cache_dir=self.cache_dir)
         ##### GPU check ####
         if torch.cuda.is_available():
-            device="cuda"
+            device="cuda:0"
             n_gpu = torch.cuda.device_count()
             device_ids = [i for i in range(0,n_gpu)] #GPUtil.getAvailable(limit = 8)
             if n_gpu == 1:
-               self.logger.info("Run the model with one-GPU [{}] ".format(n_gpu, ",".join(device_ids)))
+               self.logger.info("Run the model with one-GPU [{}] with max 8 GPUs".format(n_gpu, str(device_ids)))
                model = model.to(device)
             else:
-                self.logger.info("Run the model with {} GPUs [{}] with max 8 GPUs".format(n_gpu, ",".join(device_ids)))
+                self.logger.info("Run the model with {} GPUs [{}] with max 8 GPUs".format(n_gpu, str(device_ids)))
                 torch.backends.cudnn.benchmark = True
                 model = model.to(device)
                 model = nn.DataParallel(model, device_ids=device_ids)
