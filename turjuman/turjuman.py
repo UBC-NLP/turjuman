@@ -6,7 +6,7 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import pandas as pd
 import torch.nn as nn
 import torch
-import GPUtil
+# import GPUtil
 # from zmq import device
 # from hurry.filesize import size
 # import psutil
@@ -39,12 +39,12 @@ class turjuman():
         if torch.cuda.is_available():
             device="cuda"
             n_gpu = torch.cuda.device_count()
-            device_ids = GPUtil.getAvailable(limit = 8)
+            device_ids = [i for i in range(0,n_gpu)] #GPUtil.getAvailable(limit = 8)
             if n_gpu == 1:
-               self.logger.info("Run the model with one-GPU [{}] with max 8 GPUs".format(n_gpu, str(device_ids)))
+               self.logger.info("Run the model with one-GPU [{}] ".format(n_gpu, ",".join(device_ids)))
                model = model.to(device)
             else:
-                self.logger.info("Run the model with {} GPUs [{}] with max 8 GPUs".format(n_gpu, str(device_ids)))
+                self.logger.info("Run the model with {} GPUs [{}] with max 8 GPUs".format(n_gpu, ",".join(device_ids)))
                 torch.backends.cudnn.benchmark = True
                 model = model.to(device)
                 model = nn.DataParallel(model, device_ids=device_ids)
