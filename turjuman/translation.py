@@ -115,7 +115,7 @@ class translate_from_file():
         generated_text=[]
         sources_dataloader = DataLoader(sources, collate_fn=self.data_collator, batch_size=batch_size)
         # device = ('cuda' if torch.cuda.is_available() else 'cpu')
-        # self.logger.info("Working on {}".format(device))
+        self.logger.info(">>>>>Working on {}".format(self.device))
         # self.model.to(device)
         self.model.eval()
         samples_seen = 0
@@ -124,7 +124,7 @@ class translate_from_file():
         self.logger.info("Translating with batch_size {} and #samples = {}".format(batch_size, num_batches))
         for step, batch in enumerate(sources_dataloader):
             batch = tuple(t.to(self.device) for t in batch)
-            batch = {k: v.to(device) for k, v in batch.items()}
+            # batch = {k: v.to(device) for k, v in batch.items()}
             # print ("batch#{}".format(step))
             with torch.no_grad():
 
