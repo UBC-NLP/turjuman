@@ -104,7 +104,7 @@ class translate_from_file():
         batch = {k: v.to(device) for k, v in batch.items()}
         with torch.no_grad():
             
-            generated_tokens = self.model.generate(
+            generated_tokens = self.model.module.generate(
                     batch["input_ids"],
                     attention_mask=batch["attention_mask"],
                     **gen_kwargs,
