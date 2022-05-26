@@ -21,6 +21,8 @@
  
 <img src="./images/turjuman.png" alt="AraT5" width="65%" height="65%" align="right"/>
 
+Turjuman, a neural toolkit for translating from 20 languages into Modern Standard Arabic (MSA) that described in our OSACT5 ([The 5th Workshop on Open-Source Arabic Corpora and Processing Tools](https://osact-lrec.github.io/)) 2022 paper "**TURJUMAN: A Public Toolkit for Neural Arabic Machine Translation**".
+
 TURJUMAN, a neural toolkit for translating from 20 languages into Modern Standard Arabic (MSA). TURJUMAN exploits the recently-introduced text-to-text Transformer [AraT5 model](https://github.com/UBC-NLP/araT5) (Nagoudi et al., 2022), endowing it with a powerful ability to decode into Arabic. The toolkit offers the possibility of employing a number of diverse decoding methods, making it suited for acquiring paraphrases for the MSA translations as an added value. To train TURJUMAN, we sample from publicly available parallel data employing a simple semantic similarity method to ensure data quality.
 
 ## Requirements and Installation
@@ -109,7 +111,15 @@ turjuman(-py) is Apache-2.0 licensed. The license applies to the pre-trained mod
 ## Citation
 If you use TURJUMAN toolkit or the pre-trained models for your scientific publication, or if you find the resources in this repository useful, please cite our paper as follows (to be updated):
 ```
-
+@inproceedings{nagoudi-osact5-2022-turjuman,
+  title={TURJUMAN: A Public Toolkit for Neural Arabic Machine Translation},
+  author={Nagoudi, El Moatez Billah and Elmadany, AbdelRahim and Abdul-Mageed, Muhammad},
+  booktitle = "Proceedings of the 5th Workshop on Open-Source Arabic Corpora and Processing Tools (OSACT5)",
+  month = "June",
+  year = "2022",
+  address = "Marseille, France",
+  publisher = "European Language Resource Association",
+}
 
 ```
 
