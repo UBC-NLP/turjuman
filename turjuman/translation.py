@@ -99,17 +99,29 @@ class translate_from_file():
     #     # predictions = [pred.strip() for pred in predictions]
     #     # print (predictions)
     
+    def translate_batch(self, device, batch, sources_dataloader, step,gen_kwargs ):
+        print (">>>> device name", device)
+        batch = {k: v.to(device) for k, v in batch.items()}
+        with torch.no_grad():
+            generated_tokens = self.accelerator.unwrap_model(self.model).generate(
+                    batch["input_ids"],
+                    attention_mask=batch["attention_mask"],
+                    **gen_kwargs,
+            )
+            generated_tokens = self.accelerator.pad_across_processes(
+                    generated_tokens, dim=1, pad_index=self.tokenizer.pad_token_id
+            )
+            generated_tokens = self.accelerator.gather(generated_tokens).cpu().numpy()
+            decoded_preds = self.tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
+            decoded_preds = [pred.strip() for pred in decoded_preds]
+                # If we are in a multiprocess environment, the last batch has duplicates
+            if self.accelerator.num_processes > 1:
+                if step == len(sources_dataloader):
+                    decoded_preds = decoded_preds[: len(sources_dataloader.dataset) - samples_seen]
+        return decoded_preds
     def translate(self, filepath, batch_size, gen_kwargs):
-        # args = Seq2SeqTrainingArguments(
-        #         output_dir="./",
-        #         per_device_train_batch_size=batch_size,
-        #         per_device_eval_batch_size=batch_size,
-        #         predict_with_generate=True,
-        #         # fp16=True,
-        #         )
+        
         self.gen_kwargs = gen_kwargs
-        # self.translate_tranier(filepath, batch_size, gen_kwargs)
-        # print (gen_kwargs)
         sources=self.get_file_data(filepath)
         generated_text=[]
         sources_dataloader = DataLoader(sources, collate_fn=self.data_collator, batch_size=batch_size)
@@ -122,39 +134,16 @@ class translate_from_file():
         pbar = tqdm(total=num_batches, desc="translate")
         self.logger.info("Translating with batch_size {} and #samples = {}".format(batch_size, num_batches))
         for step, batch in enumerate(sources_dataloader):
-            # batch = tuple(t.to(self.device) for t in batch)
-            batch = {k: v.to(device) for k, v in batch.items()}
-            # print ("batch#{}".format(step))
-            with torch.no_grad():
-
-                # outputs = self.model.generate(
-                #         input_ids=batch["input_ids"], 
-                #         attention_mask=batch["attention_mask"],
-                #         **gen_kwargs,
-                #     )
-
-                # decoded_preds = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
-                # generated_text.extend(decoded_preds)
-                # pbar.update(1)
-                #------------------------------ best -------------------------------------
-                generated_tokens = self.accelerator.unwrap_model(self.model).generate(
-                    batch["input_ids"],
-                    attention_mask=batch["attention_mask"],
-                    **gen_kwargs,
-                )
-                generated_tokens = self.accelerator.pad_across_processes(
-                    generated_tokens, dim=1, pad_index=self.tokenizer.pad_token_id
-                )
-                generated_tokens = self.accelerator.gather(generated_tokens).cpu().numpy()
-                decoded_preds = self.tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
-                decoded_preds = [pred.strip() for pred in decoded_preds]
-                # If we are in a multiprocess environment, the last batch has duplicates
-                if self.accelerator.num_processes > 1:
-                    if step == len(sources_dataloader):
-                        decoded_preds = decoded_preds[: len(sources_dataloader.dataset) - samples_seen]
-                # print(decoded_preds)
-                generated_text.extend(decoded_preds)
-                pbar.update(1)
+            if device=="cuda":
+                if step < torch.cuda.device_count():
+                    device_name="cuda:"+str(step)
+                else:
+                    device_name="cuda:0"
+            else:
+                device_name="cpu"
+            decoded_preds = self.translate_batch(device_name, batch, sources_dataloader, step,gen_kwargs)
+            generated_text.extend(decoded_preds)
+            pbar.update(1)
                 #------------------------------------------------------------------------------
         pbar.close()
         sources_text = [src['text'] for src in sources]
