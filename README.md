@@ -27,15 +27,15 @@ TURJUMAN exploits the recently-introduced text-to-text Transformer [AraT5 model]
 
 ## Requirements and Installation
 - To install turjuman and develop directly using pip:
- ```shell
-    pip install turjuman
+```shell
+    pip install -U turjuman
 ```
-    or 
- ```shell
+- To install turjuman and develop directly GitHub repo using pip:
+```shell
     pip install git+https://github.com/UBC-NLP/turjuman.git
- ```
+```
 - To install turjuman and develop locally:
- ```shell
+```shell
     git clone https://github.com/UBC-NLP/turjuman.git
     cd turjuman
     pip install .

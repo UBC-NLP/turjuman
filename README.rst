@@ -1,29 +1,6 @@
-.. raw:: html
-
-    <p align="center">
-    <br>
-    <img src="./images/turjuman_logo.png"/>
-    <br>
-    <p>
-
-    <p align="center">
-    <a href="https://github.com/UBC-NLP/turjuman/releases">
-        <img alt="GitHub release" src="https://img.shields.io/github/release/UBC-NLP/turjuman.svg">
-    </a>
-
-    <a href="https://turjuman.dlnlp.ai">
-        <img alt="Documentation" src="https://img.shields.io/website.svg?down_color=red&down_message=offline&up_message=online&url=https://turjuman.dlnlp.ai">
-    </a>
-    <a href="https://github.com/UBC-NLP/turjuman/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/UBC-NLP/turjuman?logoColor=blue"></a>
-    <a href='https://turjuman.readthedocs.io/en/latest/?badge=latest'><img src='https://readthedocs.org/projects/turjuman/badge/?version=latest' alt='Documentation Status' /></a>
-    <a href="https://github.com/UBC-NLP/turjuman/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/UBC-NLP/turjuman"></a>
-    <a href="https://github.com/UBC-NLP/turjuman/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/UBC-NLP/turjuman"></a>
-
-    </p>
-
 Turjuman, a neural toolkit for translating from 20 languages into Modern
 Standard Arabic (MSA) that described in our OSACT5 2022 paper `TURJUMAN:
-A Public Toolkit for Neural Arabic Machine Translation <http://>`__.
+A Public Toolkit for Neural Arabic Machine Translation <https://arxiv.org/abc/4328463>`__.
 
 TURJUMAN exploits the recently-introduced text-to-text Transformer
 `AraT5 model <https://github.com/UBC-NLP/araT5>`__ (Nagoudi et al.,
@@ -34,30 +11,10 @@ translations as an added value. To train TURJUMAN, we sample from
 publicly available parallel data employing a simple semantic similarity
 method to ensure data quality.
 
-Requirements and Installation
------------------------------
+GitHub link: `https://github.com/UBC-NLP/turjuman <https://github.com/UBC-NLP/turjuman>`__
 
--  To install turjuman and develop directly using pip:
+Online demo link: `https://turjuman.dlnlp.ai/ <https://turjuman.dlnlp.ai/>`__ 
 
-.. code:: shell
-
-      pip install -U turjuman
-
-::
-
--  To install turjuman and develop directly from GitHub repo using pip:
-
-.. code:: shell
-
-      pip install -U git+https://github.com/UBC-NLP/turjuman.git
-
--  To install turjuman and develop locally:
-
-.. code:: shell
-
-      git clone https://github.com/UBC-NLP/turjuman.git
-      cd turjuman
-      pip install .
 
 Getting Started
 ---------------
@@ -66,77 +23,7 @@ The `full documentation <https://turjuman.readthedocs.io/en/latest/>`__
 contains instructions for getting started, translation using diffrent
 methods, intergrate Turjuman with your code, and provides more examples.
 
-Colab Examples
---------------
 
-(1) Command Line Interface
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
-   <table style='border:1px red;' width='100%'>
-    <tr><td><b>Command</b></td><td> <b>Content</b></td><td><b>Colab link</b></td></tr>
-    <tr>
-    <td>turjuman_translate</td>
-    <td>
-    <ul>
-        <li> Usage and Arguments </li>
-        <li> Translate using greedy search</li>
-        <li> Translate using beam search (default)</li>
-        <li> Translate using sampling search</li>
-        <li> Read and translate text from file</li>
-    </ul>
-    </td>
-    <td>
-    <a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_translate_cli.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
-
- </td>
-    </tr>
-    <tr>
-    <td>turjuman_interactive</td>
-    <td>
-    <ul>
-        <li> Usage and Arguments </li>
-        <li> Examples</li>
-    </ul>
-    </td>
-    <td> <a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_interactive_cli.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></td>
-    </tr>
-    <tr>
-    <td>turjuman_score</td>
-    <td>
-    <ul>
-        <li> Usage and Arguments </li>
-        <li> Input files format</li>
-        <li> Example</li>
-    </ul>
-    </td>
-    <td> <a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/turjuman_score_cli.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></a></td>
-    </tr>
-
-    </table>
-
-(2) Integrate Turjuman with your python code
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-    <table style='border:1px red;' width='100%'>
-    <tr><td><b>Functions</b></td><td> <b>Content</b></td><td><b>Colab link</b></td></tr>
-    <td>translate <br> translate_from_file</td>
-    <td>
-    <ul>
-        <li> Install Turjuman </li>
-        <li> Initial turjuman object </li>
-        <li> Translate using greedy search</li>
-        <li> Translate using beam search (default)</li>
-        <li> Translate using sampling search</li>
-        <li> Read and translate text from file</li>
-    </ul>
-    </td>
-    <td> <a href="https://colab.research.google.com/github/UBC-NLP/turjuman/blob/main/examples/Integrate_turjuman_with_your_code.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg"></td>
-    </tr>
-    </table>
-    
 License
 -------
 
@@ -148,7 +35,7 @@ Citation
 
 If you use TURJUMAN toolkit or the pre-trained models for your
 scientific publication, or if you find the resources in this repository
-useful, please cite our paper as follows (to be updated):
+useful, please cite our paper as follows:
 
 ::
 
