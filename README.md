@@ -1,7 +1,23 @@
-  
-![](./images/turjuman_logo.png)  
+<p align="center">
+    <br>
+    <img src="./images/turjuman_logo.png"/>
+    <br>
+<p>
 
- [![GitHub release](https://img.shields.io/github/release/UBC-NLP/turjuman.svg)](https://github.com/UBC-NLP/turjuman/releases)[![Documentation](https://img.shields.io/website.svg?down_color=red&down_message=offline&up_message=online&url=https://turjuman.dlnlp.ai) ](https://turjuman.dlnlp.ai)[![GitHub license](https://img.shields.io/github/license/UBC-NLP/turjuman?logoColor=blue)](https://github.com/UBC-NLP/turjuman/blob/main/LICENSE) [![Documentation Status](https://readthedocs.org/projects/turjuman/badge/?version=latest)](https://turjuman.readthedocs.io/en/latest/?badge=latest) [![GitHub stars](https://img.shields.io/github/stars/UBC-NLP/turjuman)](https://github.com/UBC-NLP/turjuman/stargazers) [![GitHub forks](https://img.shields.io/github/forks/UBC-NLP/turjuman)](https://github.com/UBC-NLP/turjuman/network)
+<p align="center">
+<a href="https://github.com/UBC-NLP/turjuman/releases">
+        <img alt="GitHub release" src="https://img.shields.io/github/release/UBC-NLP/turjuman.svg">
+    </a>
+
+<a href="https://turjuman.dlnlp.ai">
+        <img alt="Documentation" src="https://img.shields.io/website.svg?down_color=red&down_message=offline&up_message=online&url=https://turjuman.dlnlp.ai">
+    </a>
+<a href="https://github.com/UBC-NLP/turjuman/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/UBC-NLP/turjuman?logoColor=blue"></a>
+<a href='https://turjuman.readthedocs.io/en/latest/?badge=latest'><img src='https://readthedocs.org/projects/turjuman/badge/?version=latest' alt='Documentation Status' /></a>
+<a href="https://github.com/UBC-NLP/turjuman/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/UBC-NLP/turjuman"></a>
+<a href="https://github.com/UBC-NLP/turjuman/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/UBC-NLP/turjuman"></a>
+
+</p>
  
 
 Turjuman, a neural toolkit for translating from 20 languages into Modern Standard Arabic (MSA) that described in our OSACT5 2022 paper [**TURJUMAN: A Public Toolkit for Neural Arabic Machine Translation**](http://).
