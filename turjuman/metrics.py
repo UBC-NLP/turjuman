@@ -13,4 +13,3 @@ def bleu_score(hyp_file, ref_file):
         result = {"bleu": bleu_score}
         return result
 
-# print (bleu_score("predict_sample.txt", "gold_sample.txt"))

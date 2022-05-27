@@ -32,13 +32,7 @@ def score_cli():
     parser = get_parser()
     args = parser.parse_args()
     #-------------------------
-    
-    # logger.addHandler(
-    #     logging.FileHandler(
-    #         filename="torjuman_score_cli.log",
-    #     )
-    # )
-    # Print args
+ 
     
     logger.info(args)
     results = bleu_score(args.hyp_file, args.ref_file)
