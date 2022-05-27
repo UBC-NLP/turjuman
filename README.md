@@ -32,7 +32,7 @@ TURJUMAN exploits the recently-introduced text-to-text Transformer [AraT5 model]
 ```
 - To install turjuman and develop directly GitHub repo using pip:
 ```shell
-    pip install git+https://github.com/UBC-NLP/turjuman.git
+    pip install -U git+https://github.com/UBC-NLP/turjuman.git
 ```
 - To install turjuman and develop locally:
 ```shell
