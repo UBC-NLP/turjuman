@@ -51,11 +51,5 @@ useful, please cite our paper as follows:
 7. Acknowledgments
 ------------------
 
-We gratefully acknowledge support from the Natural Sciences and
-Engineering Research Council of Canada, the Social Sciences and
-Humanities Research Council of Canada, Canadian Foundation for
-Innovation, `ComputeCanada <www.computecanada.ca>`__ and `UBC
-ARC-Sockeye <https://doi.org/10.14288/SOCKEYE>`__. We also thank the
-`Google TensorFlow Research Cloud
-(TFRC) <https://www.tensorflow.org/tfrc>`__ program for providing us
-with free TPU access.
+We gratefully acknowledge support from the Natural Sciences and Engineering Research Council of Canada (NSERC; RGPIN-2018-04267), the Social Sciences and Humanities Research Council of Canada (SSHRC; 435-2018-0576; 895-2020-1004; 895-2021-1008),  `ComputeCanada (CC) <www.computecanada.ca>`__ and `UBC
+ARC-Sockeye <https://doi.org/10.14288/SOCKEYE>`__ and Advanced Micro Devices, Inc. (AMD). Any opinions, conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of NSERC, SSHRC, CFI, CC, AMD, or UBC ARC-Sockeye. 
