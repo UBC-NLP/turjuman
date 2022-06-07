@@ -12,7 +12,7 @@ method to ensure data quality.
 
 GitHub link: `https://github.com/UBC-NLP/turjuman <https://github.com/UBC-NLP/turjuman>`__
 
-Online demo link: `https://turjuman.dlnlp.ai/ <https://turjuman.dlnlp.ai/>`__ 
+Online demo link: `https://demos.dlnlp.ai/turjuman <https://demos.dlnlp.ai/turjuman/>`__ 
 
 
 Getting Started

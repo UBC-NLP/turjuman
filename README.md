@@ -9,8 +9,8 @@
         <img alt="GitHub release" src="https://img.shields.io/github/release/UBC-NLP/turjuman.svg">
     </a>
 
-<a href="https://turjuman.dlnlp.ai">
-        <img alt="Documentation" src="https://img.shields.io/website.svg?down_color=red&down_message=offline&up_message=online&url=https://turjuman.dlnlp.ai">
+<a href="https://demos.dlnlp.ai/turjuman">
+        <img alt="Documentation" src="https://img.shields.io/website.svg?down_color=red&down_message=offline&up_message=online&url=https://demos.dlnlp.ai/turjuman">
     </a>
 <a href="https://github.com/UBC-NLP/turjuman/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/UBC-NLP/turjuman?logoColor=blue"></a>
 <a href='https://turjuman.readthedocs.io/en/latest/?badge=latest'><img src='https://readthedocs.org/projects/turjuman/badge/?version=latest' alt='Documentation Status' /></a>

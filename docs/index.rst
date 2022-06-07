@@ -17,7 +17,7 @@ TURJUMAN TURJUMAN, a neural toolkit for translating from 20 languages into Moder
 
    
 :github: https://github.com/UBC-NLP/turjuman
-:demo: https://turjuman.dlnlp.ai/
+:demo: https://demos.dlnlp.ai/turjuman
 
  
 .. toctree::
