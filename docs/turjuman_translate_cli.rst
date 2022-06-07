@@ -34,28 +34,28 @@ Turjuman Command Line Interface (CLI) Turjuman cli ``turjuman_translate_cli`` su
                                  the follows ['greedy', 'beam', 'sampling'], default
                                  value is beam search
            -s SEQ_LENGTH, --seq_length SEQ_LENGTH
-                                 The maximum sequence length value, default vlaue is
+                                 The maximum sequence length value, default value is
                                  300
            -o MAX_OUTPUTS, --max_outputs MAX_OUTPUTS
-                                 The maxmuim of the output tanslations, default vlaue
+                                 The maxmuim of the output tanslations, default value
                                  is 1
            -b NUM_BEAMS, --num_beams NUM_BEAMS
-                                 Number of beams, default vlaue is 5
+                                 Number of beams, default value is 5
            -n NO_REPEAT_NGRAM_SIZE, --no_repeat_ngram_size NO_REPEAT_NGRAM_SIZE
                                  Number of n-gram that doesn't appears twice, default
-                                 vlaue is 2
+                                 value is 2
            -k TOP_K, --top_k TOP_K
                                  Sample from top K likely next words instead of all
-                                 words, default vlaue is 50
+                                 words, default value is 50
            -p TOP_P, --top_p TOP_P
                                  Sample from the smallest set whose cumulative
                                  probability mass exceeds p for next words, default
-                                 vlaue is 0.95
+                                 value is 0.95
            -c CACHE_DIR, --cache_dir CACHE_DIR
-                                 The cache directory path, default vlaue is
+                                 The cache directory path, default value is
                                  turjuman_cache directory
            -l LOGGING_FILE, --logging_file LOGGING_FILE
-                                 The logging file path, default vlaue is None
+                                 The logging file path, default value is None
            -bs BATCH_SIZE, --batch_size BATCH_SIZE
                                  The maximum number of source examples utilized in one
                                  iteration
@@ -65,10 +65,10 @@ Translate using beam search (default)
 ``Beam search`` is the ``default`` generation method on Turjuman
    -  Beam search default setting:
 
-      -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``default vlaue is 300``)
-      -  ``-o`` or ``--max_outputs``: The maxmuim of the output tanslations (``default vlaue is 1``)
-      -  ``-b`` or ``--num_beams NUM_BEAMS``: Number of beams (``default vlaue is 1``)
-      -  ``-n`` or ``--no_repeat_ngram_size``: Number of n-gram that doesn't appears twice (``default vlaue is 2``)
+      -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``default value is 300``)
+      -  ``-o`` or ``--max_outputs``: The maxmuim of the output tanslations (``default value is 1``)
+      -  ``-b`` or ``--num_beams NUM_BEAMS``: Number of beams (``default value is 1``)
+      -  ``-n`` or ``--no_repeat_ngram_size``: Number of n-gram that doesn't appears twice (``default value is 2``)
 
 .. code-block:: console
 
@@ -95,7 +95,7 @@ Translate using greedy search
 -----------------------------------
 
  ``Greedy search`` default setting:
-   -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``*``default vlaue is 300``*``)
+   -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``*``default value is 300``*``)
 
 .. code-block:: console
 
@@ -116,10 +116,10 @@ Translate using sampling search
 
 ``Sampling search`` default setting:
 
-      -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``default vlaue is 300``)
-      -  ``-o`` or ``--max_outputs``: The maxmuim of the output tanslations (``default vlaue is 1``)
-      -  ``-k`` or ``--top_k``: Sample from top K likely next words instead of all words (``default vlaue is 50``)
-      -  ``-p`` or ``--top_p``: Sample from the smallest set whose cumulative probability mass exceeds p for next words (``default vlaue is 0.95``)
+      -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``default value is 300``)
+      -  ``-o`` or ``--max_outputs``: The maxmuim of the output tanslations (``default value is 1``)
+      -  ``-k`` or ``--top_k``: Sample from top K likely next words instead of all words (``default value is 50``)
+      -  ``-p`` or ``--top_p``: Sample from the smallest set whose cumulative probability mass exceeds p for next words (``default value is 0.95``)
 
 .. code-block:: console
 

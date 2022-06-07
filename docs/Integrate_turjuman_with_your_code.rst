@@ -47,10 +47,10 @@ Translate using beam search (default)
 ``Beam search`` is the ``default`` generation method on Turjuman
    -  Beam search default setting:
 
-      -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``default vlaue is 300``)
-      -  ``-o`` or ``--max_outputs``: The maxmuim of the output tanslations (``default vlaue is 1``)
-      -  ``-b`` or ``--num_beams NUM_BEAMS``: Number of beams (``default vlaue is 1``)
-      -  ``-n`` or ``--no_repeat_ngram_size``: Number of n-gram that doesn't appears twice (``default vlaue is 2``)
+      -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``default value is 300``)
+      -  ``-o`` or ``--max_outputs``: The maxmuim of the output tanslations (``default value is 1``)
+      -  ``-b`` or ``--num_beams NUM_BEAMS``: Number of beams (``default value is 1``)
+      -  ``-n`` or ``--no_repeat_ngram_size``: Number of n-gram that doesn't appears twice (``default value is 2``)
 
 
 .. code:: python
@@ -66,7 +66,7 @@ Translate using beam search (default)
 Translate using greedy search
 -----------------------------------
  ``Greedy search`` default setting:
-   -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``default vlaue is 300``)
+   -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``default value is 300``)
 .. code:: python
 
       greedy_options = {"search_method":"greedy", "seq_length": 300}
@@ -82,10 +82,10 @@ Translate using sampling search
 
 ``Sampling search`` default setting:
 
-      -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``default vlaue is 300``)
-      -  ``-o`` or ``--max_outputs``: The maxmuim of the output tanslations (``default vlaue is 1``)
-      -  ``-k`` or ``--top_k``: Sample from top K likely next words instead of all words (``default vlaue is 50``)
-      -  ``-p`` or ``--top_p``: Sample from the smallest set whose cumulative probability mass exceeds p for next words (``default vlaue is 0.95``)
+      -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``default value is 300``)
+      -  ``-o`` or ``--max_outputs``: The maximum of the output tanslations (``default value is 1``)
+      -  ``-k`` or ``--top_k``: Sample from top K likely next words instead of all words (``default value is 50``)
+      -  ``-p`` or ``--top_p``: Sample from the smallest set whose cumulative probability mass exceeds p for next words (``default value is 0.95``)
 
 .. code:: python
 

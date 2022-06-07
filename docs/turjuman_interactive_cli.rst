@@ -2,10 +2,10 @@ Interactive Command Line
 =====================
    -  Turjuman interactive cli ``turjuman_interactive`` support only beam search with the following default setting:
 
-      -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``default vlaue is 300``)
-      -  ``-o`` or ``--max_outputs``: The maxmuim of the output tanslations (``default vlaue is 1``)
-      -  ``-b`` or ``--num_beams NUM_BEAMS``: Number of beams (``default vlaue is 1``)
-      -  ``-n`` or ``--no_repeat_ngram_size``: Number of n-gram that doesn't appears twice (``default vlaue is 2``)
+      -  ``-s`` or ``--seq_length``: The maximum sequence length value, (``default value is 300``)
+      -  ``-o`` or ``--max_outputs``: The maximum of the output tanslations (``default value is 1``)
+      -  ``-b`` or ``--num_beams NUM_BEAMS``: Number of beams (``default value is 1``)
+      -  ``-n`` or ``--no_repeat_ngram_size``: Number of n-gram that doesn't appears twice (``default value is 2``)
 
    -  ``turjuman_interactive`` command asks you you to input translate your input text. Moreover, you can write q to exsit as shown in the following image.
 
@@ -29,7 +29,7 @@ Usage and Arguments
          optional arguments:
            -h, --help            show this help message and exit
            -c CACHE_DIR, --cache_dir CACHE_DIR
-                                 The cache directory path, default vlaue is
+                                 The cache directory path, default value is
                                  turjuman_cache directory
 
 (2) Turjuman Interactive
