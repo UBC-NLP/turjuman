@@ -18,9 +18,9 @@ Turjuman is a neural machine translation toolkit. It translates from 20 language
 
 Turjuman exploits our `AraT5 model <https://github.com/UBC-NLP/araT5>`__. This endows Turjuman with a powerful ability to decode into Arabic. The toolkit offers the possibility of employing a number of diverse decoding methods, making it suited for acquiring paraphrases for the MSA translations as an added value.
    
-:github: https://github.com/UBC-NLP/turjuman
-:demo: https://demos.dlnlp.ai/turjuman
-:paper: https://arxiv.org/abs/2206.03933
+:Github: https://github.com/UBC-NLP/turjuman
+:Demo: https://demos.dlnlp.ai/turjuman
+:Paper: https://arxiv.org/abs/2206.03933
 
  
 .. toctree::
