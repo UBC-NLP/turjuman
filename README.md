@@ -21,7 +21,9 @@
  
 
 <img src="./images/turjuman.png" alt="AraT5" width="55%" height="55%" align="right"/>
-Turjuman is a neural machine translation toolkit. It translates from 20 languages into Modern Standard Arabic (MSA). Turjuman is described in this paper: [**TURJUMAN: A Public Toolkit for Neural Arabic Machine Translation**](https://arxiv.org/abs/2206.03933).
+
+Turjuman is a neural machine translation toolkit. It translates from 20 languages into Modern Standard Arabic (MSA). Turjuman is described in this paper: 
+[**TURJUMAN: A Public Toolkit for Neural Arabic Machine Translation**](https://arxiv.org/abs/2206.03933).
 
 Turjuman exploits our [AraT5 model](https://github.com/UBC-NLP/araT5). This endows Turjuman with a powerful ability to decode into Arabic. The toolkit offers the possibility of employing a number of diverse decoding methods, making it suited for acquiring paraphrases for the MSA translations as an added value.
 
