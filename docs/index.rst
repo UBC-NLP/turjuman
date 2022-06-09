@@ -10,7 +10,7 @@ Turjuman documentation
 
 .. raw:: html
 
-   <img src="https://github.com/UBC-NLP/turjuman/raw/master/images/turjuman.png" alt="AraT5" width="55%" height="55%" align="right"/>
+   <img src="https://github.com/UBC-NLP/turjuman/raw/master/images/turjuman.png" alt="AraT5" width="50%" height="50%" align="right"/>
 
 
 
