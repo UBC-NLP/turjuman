@@ -59,7 +59,7 @@ class turjuman():
 
         generated_text = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
         
-        return outputs
+        return generated_text
     
     
     def translate_from_file(self, input_file, search_method, seq_length=300, max_outputs=1, num_beams=5, no_repeat_ngram_size=2, top_p=0.95, top_k=50, batch_size=25):
